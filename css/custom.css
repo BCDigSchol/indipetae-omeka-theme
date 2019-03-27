@@ -1,0 +1,51 @@
+.header {
+  padding: 0px;
+}
+
+body .header a {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+
+/* footer */
+
+  footer {
+    width: 100%;
+    float: left;
+    margin-right: 5.26316%;
+    margin-right: 0;
+    background-color: white;
+  }
+
+footer #footer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+  .footer-text {
+
+              }
+  .footer-heading {
+
+            }
+
+#notes-wrapper {
+    display: flex;
+    flex-direction: row;
+    }
+
+.site-links {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* Home page */
+
+h2 .homepage_heading {
+  text-align: center;
+  color: #872334;
+  text-transform: uppercase;
+  font-size: 20px;
+}
