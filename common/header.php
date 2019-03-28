@@ -44,7 +44,7 @@
                   <span class="upper"><a href="http://www.bc.edu/iajs" target="new" class="iajs">Institute for Advanced Jesuit Studies</a></span>
                 </div>
               </div>
-              <a href="https://www.jesuitportal.bc.edu">
+              <a href="https://indipetae.bc.edu">
                 <div class="row brand-backgnd brand">
                   <div class="header-brand center-col">
                     <div class="row">
@@ -52,8 +52,8 @@
                         <img alt="Institute for Advanced Jesuit Studies" src="https://www.jesuitportal.bc.edu/wp-content/themes/bciajs/imgs/bciajs_logo_transparent.png" class="logo">
                       </div>
                       <div class="pull-right col-sm-10">
-                        <h1 class="upper header-title">The Portal to Jesuit Studies</h1>
-                        <h4 class="upper header-sub-title">A Collaborative resource for research and scholarship</h4>
+                        <h1 class="upper header-title">Digital Indipetae Project</h1>
+                        <h4 class="upper header-sub-title">Free, Online Database of Petitions for the Jesuit Missions</h4>
                       </div>
                     </div>
                   </div>
