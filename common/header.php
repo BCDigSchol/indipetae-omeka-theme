@@ -40,8 +40,7 @@
             <div class="hidden-xs">
               <div class="row">
                 <div class="top-menu">
-                  <span class="bc"><img alt="IAJS home" src="https://www.jesuitportal.bc.edu/wp-content/themes/bciajs/imgs/bclogo.png" class="col-sm-3 col-md-2"></span>
-                  <span class="upper"><a href="http://www.bc.edu/iajs" target="new" class="iajs">Institute for Advanced Jesuit Studies</a></span>
+                  <span class="upper"><a href="https://www.jesuitportal.bc.edu/" target="new" class="iajs">The Portal to Jesuit Studies</a></span>
                 </div>
               </div>
               <a href="https://indipetae.bc.edu">
@@ -67,15 +66,18 @@
 
             <nav id="top-nav" role="navigation">
                 <?php echo public_nav_main(); ?>
+                <div id="search-container" role="search">
+                    <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
+                    <?php echo search_form(array('show_advanced' => true)); ?>
+                    <?php else: ?>
+                    <?php echo search_form(); ?>
+                    <?php endif; ?>
+                </div>
             </nav>
 
-            <div id="search-container" role="search">
-                <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-                <?php echo search_form(array('show_advanced' => true)); ?>
-                <?php else: ?>
-                <?php echo search_form(); ?>
-                <?php endif; ?>
-            </div>
+            <div id="search-wrapper">
+
+          </div>
 
         </header>
 

@@ -16,6 +16,21 @@ body {
   justify-content: center;
 }
 
+/*Content*/
+
+.show .element {
+border: none;
+}
+
+#content {
+  padding-left:100px;
+  padding-right:100px;
+}
+
+#search-container {
+  width:30%;
+}
+
 /* footer */
 
   footer {
@@ -37,6 +52,7 @@ body {
 #notes-wrapper {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     }
 
 .site-links {

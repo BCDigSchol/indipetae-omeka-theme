@@ -6,7 +6,12 @@
 <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
 <?php endif; ?>
 
+<div id="floatingwrapper">
+
+    <div class="left" style="width: 45%; float: left;">
+
 <?php echo all_element_texts('item'); ?>
+
 
 <!-- The following returns all of the files associated with an item. -->
 <?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
@@ -15,7 +20,12 @@
     <div class="element-text"><?php echo files_for_item(); ?></div>
 </div>
 <?php endif; ?>
+</div>
+<div id="right" style="width:50%; float:right; padding:3%; background-color:lightgrey;">
+    <?php echo metadata('item', array('Dublin Core','Description')); ?>
+</div>
 
+</div>
 <!-- If the item belongs to a collection, the following creates a link to that collection. -->
 <?php if (metadata('item', 'Collection Name')): ?>
 <div id="collection" class="element">

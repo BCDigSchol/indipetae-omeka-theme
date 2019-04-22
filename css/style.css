@@ -387,11 +387,11 @@ th {
   margin: auto;
   overflow: hidden; }
 
-#search-container {
+/*#search-container {
   width: 100%;
   margin-right: 0;
 display: flex;
-justify-content: center; }
+justify-content: center; }*/
 
 .nav-menu {
   width: 100%;
@@ -618,17 +618,17 @@ h6 {
 /* -------------------------------------------------------------------------*/
 /* Links */
 a {
-  color: #684B98;
+  color: #8a100b;
   text-decoration: none; }
   a:hover {
-    color: #c170d0;
+    color: #b30000;
     text-decoration: underline; }
   a:active {
-    color: #BE75CB; }
+    color: #8a100b; }
   a:visited {
-    color: #8164b2; }
+    color: #501315; }
   a:focus {
-    color: #5C3F8D; }
+    color: #8a100b; }
 
 /* -------------------------------------------------------------------------*/
 /* General Navigation */
@@ -757,11 +757,11 @@ a {
     margin-bottom: .5em;
     border: 0; }
     .item-pagination .next a:hover, .item-pagination .previous a:hover {
-      background-color: #684B98;
+      background-color: #872334;
       color: white;
       text-decoration: none; }
     .item-pagination .next a:active, .item-pagination .previous a:active {
-      background-color: #BE75CB; }
+      background-color: #872334; }
 
 #sort-links {
   margin: 0 0 24px 0;
@@ -788,16 +788,20 @@ a {
 /* Top Navigation - Mega Menu Styles */
 #top-nav {
   min-height: 40px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   background-color:#69635f;
   /*    position:relative;
 */ }
   #top-nav .nav-menu {
     overflow: auto;
-    background-color: #69635f;
+    background-color: #872334;
     display: flex;
-    justify-content: center;}
+    justify-content: center;
+    width: 50%;}
     #top-nav .nav-menu .active {
-      background-color: #69635f; }
+      background-color: #872334; }
       #top-nav .nav-menu .active a {
         color: white; }
   #top-nav li {
@@ -811,14 +815,14 @@ a {
       padding: 1em 0 1em 1em;
       color: white;}
       #top-nav li a:hover {
-        background-color: #684B98;
+        background-color: #872334;
         color: #fff;
         text-decoration: none; }
     #top-nav li:last-of-type {
       border-color: transparent; }
     #top-nav li a.open {
       color: white;
-      background-color: #684B98; }
+      background-color: #872334; }
   #top-nav .sub-nav {
     display: none;
     background-color: #f7f7f7; }
@@ -832,13 +836,13 @@ a {
     #top-nav .sub-nav.open li {
       padding: 0; }
       #top-nav .sub-nav.open li a {
-        color: #684B98;
+        color: #872334;
         padding: 1em;
         border-bottom: 1px solid white; }
       #top-nav .sub-nav.open li a:hover {
         color: white;
         text-decoration: none;
-        background-color: #cf9ad9; }
+        background-color: #872334; }
     #top-nav .sub-nav.open .active a {
       color: white; }
     #top-nav .sub-nav.open ul a:before {
@@ -904,7 +908,7 @@ button,
 #search-container #search-form {
   position: relative;
   height: 36px;
-width: 50% }
+ }
 
 #search-container input[type=text] {
   margin: 0;
@@ -1273,7 +1277,7 @@ body.files .item-file {
       float: left;
       margin: 0; }
       #exhibit-pages.full #secondary-nav ul .current a {
-        background-color: #7453a9;
+        background-color: #872334;
         color: white; }
       #exhibit-pages.full #secondary-nav ul li {
         padding: 0;
@@ -1288,11 +1292,11 @@ body.files .item-file {
           border: 0;
           margin-bottom: 0; }
           #exhibit-pages.full #secondary-nav ul li a:hover {
-            background-color: #684B98;
+            background-color: #872334;
             color: white;
             text-decoration: none; }
           #exhibit-pages.full #secondary-nav ul li a:active {
-            background-color: #BE75CB; }
+            background-color: #872334; }
     #exhibit-pages.full #secondary-nav > li:nth-child(2) {
       display: block; }
     #exhibit-pages.full #secondary-nav > li:nth-child(3) {
@@ -1449,8 +1453,8 @@ body.files .item-file {
     float: right; }
   /* -------------------------------------------------------------------------*/
   /* Search */
-  #search-container {
-    margin: 30px 0; }
+  /*#search-container {
+    margin: 30px 0; }*/
   /* -------------------------------------------------------------------------*/
   /* Advanced Search Form */
   #advanced-search-form .field .two label {
@@ -1468,7 +1472,6 @@ body.files .item-file {
   /*** Adapted from Emiglio by Kim Nguyen ****/
   /* mega menu list */
   #top-nav .nav-menu {
-    width: 100%;
     display: block;
     overflow: initial;
     position: relative;
