@@ -1,32 +1,15 @@
 {
-  "name": "minimalist",
-  "version": "2.4.0",
-  "description": "\"Clean lines, architectural.\"",
-  "main": "gulpfile.js",
-  "dependencies": {},
+  "name": "indipetae",
+  "version": "1.0.0",
+  "main": "js/index.js",
+  "repository": "https://github.com/BCDigSchol/indipetae.git",
+  "author": "Benjamin Florin <benjamin.florin@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^6.4.0",
-    "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-postcss": "^6.1.1",
-    "gulp-sass": "^2.3.2",
-    "susy": "^2.2.12"
-  },
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/omeka/theme-minimalist.git"
-  },
-  "keywords": [
-    "\"white",
-    "purple",
-    "sans-serif\""
-  ],
-  "author": "\"Roy Rosenzweig Center for History and New Media\"",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/omeka/theme-minimalist/issues"
-  },
-  "homepage": "https://github.com/omeka/theme-minimalist#readme"
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  }
 }
