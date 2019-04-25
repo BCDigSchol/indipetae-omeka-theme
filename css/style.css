@@ -7,7 +7,7 @@
  *    user zoom.
  */
 html {
-  font-family: sans-serif;
+  font-family: "OpenSans", sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -438,7 +438,7 @@ footer {
 
 body {
   background-color: #fff;
-  font-family: "Lato", Verdana, Arial, sans-serif;
+  font-family: "OpenSans", sans-serif;
   font-size: 16px;
   line-height: 24px;
   color: #444;
@@ -573,7 +573,7 @@ footer {
 /* -------------------------------------------------------------------------*/
 /* Headings */
 h1, h2, #item-filters .collection, h3, h4, h5, h6 {
-  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+  font-family: "OpenSans", sans-serif;
   font-weight: normal;
   line-height: 36px;
   padding: .5em 0;
@@ -605,7 +605,7 @@ h6 {
 
 #site-title {
   color: #5C3F8D;
-  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+  font-family: "OpenSans", sans-serif;
   text-transform: uppercase;
   font-size: 40px;
   font-weight: bold;
@@ -709,14 +709,14 @@ a {
     .pagination .pagination_previous a:hover,
     .pagination .previous-page a:hover,
     .pagination .next-page a:hover {
-      background-color: #684B98;
+      background-color: #8a100b;
       color: white;
       text-decoration: none; }
     .pagination .pagination_next a:active,
     .pagination .pagination_previous a:active,
     .pagination .previous-page a:active,
     .pagination .next-page a:active {
-      background-color: #BE75CB; }
+      background-color: #b30000; }
 
 .pagination_next a,
 .pagination_previous a {
@@ -924,10 +924,11 @@ button,
   position: absolute;
   top: 0;
   text-align: center;
-  color: #684B98; }
+  color: #8a100b; }
   #search-container .show-advanced:hover,
   #search-container button:hover {
-    color: #fff; }
+    color: #fff;
+    background-color:#8a100b;}
   #search-container .show-advanced:after,
   #search-container button:after {
     font-family: "FontAwesome";
@@ -1310,7 +1311,7 @@ body.files .item-file {
       #exhibit-pages.full #secondary-nav > li:nth-child(4) a:before {
         content: "\2014\0020"; }
     #exhibit-pages.full #secondary-nav .exhibit-title {
-      font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+      font-family: "OpenSans", sans-serif;
       text-transform: uppercase;
       padding: .5em 0; }
       #exhibit-pages.full #secondary-nav .exhibit-title:after {

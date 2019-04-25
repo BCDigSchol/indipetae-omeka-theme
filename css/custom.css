@@ -8,7 +8,7 @@ body .header a {
 }
 
 body {
-  font-family: OpenSans, sans-serif;
+  font-family: "OpenSans", sans-serif;
 }
 
 #top-nav .nav-menu {
@@ -18,6 +18,40 @@ body {
 
 /*Content*/
 
+#banner-wrapper {
+    background-image: url(https://indipetae.bc.edu/themes/minimalist/img/Indipetaev1.png);
+    background-size: cover;
+    height: 300px;
+    width:auto;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items:center;
+    align-content:center;
+
+}
+
+.banner-text{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-family: "OpenSans", sans-serif;
+}
+
+.banner-link {
+  border: 1px solid white;
+  padding:1%;
+  background-color: rgb(255, 255, 255, 0.2);
+}
+
+.banner-link a{
+  color:white;
+  text-decoration: none;
+  letter-spacing: 2%;
+}
+
+
 .show .element {
 border: none;
 }
@@ -25,12 +59,28 @@ border: none;
 #content {
   padding-left:100px;
   padding-right:100px;
+  padding-top:0px;
 }
 
 #search-container {
   width:30%;
 }
 
+/* Browse Content */
+
+.secondary-nav {
+  background-color:rgb(140, 138, 137, 0.2);
+}
+
+.item-pagination {
+  padding: 0px;
+  overflow:inherit;
+}
+
+/* Item page*/
+.element-set #element {
+  display:none;
+}
 /* footer */
 
   footer {
@@ -81,6 +131,7 @@ border: none;
 .copyright {
   text-align:center;
   padding-top: 2%;
+  color:#8a6b46;
 }
 
 
