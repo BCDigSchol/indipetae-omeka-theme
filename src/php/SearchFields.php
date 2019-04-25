@@ -29,7 +29,7 @@ const SEARCH_FIELDS = [
         'controlled' => false
     ],
     FIELD_GRADE => [
-        'id' => '13',
+        'id' => '51',
         'dc_label' => 'Type',
         'controlled' => true,
         'values' => [
