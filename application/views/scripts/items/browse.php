@@ -36,6 +36,7 @@ $sortLinks[__('Date')] = 'Dublin Core,Date';
     </div>
     <?php endif; ?>
 
+<!--Removed the description snippet from the public view-->
     <?php /*<? php <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
     <div class="item-description">
         <?php echo $description; ?>
