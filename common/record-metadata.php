@@ -12,14 +12,14 @@ if(isset($elementsForDisplay['Item Type Metadata'])) {
 }
 //$wantedElements ['Title'] = $elementsForDisplay['Dublin Core'] ['Title'];//
 //$wantedElements ['Document ID'] = $elementsForDisplay['Dublin Core'] ['Extent'];//
-//$wantedElements ['Transcribed By'] = $elementsForDisplay ['Dublin Core'] ['Contributor'];//
-$wantedElements [''] = $elementsForDisplay ['Dublin Core'] ['Description'];
+//$wantedElements ['Transcribed By'] = $elementsForDisplay ['Dublin Core'] ['Provenance'];//
+$wantedElements ['Transcription'] = $elementsForDisplay ['Dublin Core'] ['Description'];
 $wantedElements ['Sender'] = $elementsForDisplay ['Dublin Core'] ['Creator'];
-$wantedElements ['Grade S.J.'] = $elementsForDisplay ['Dublin Core'] ['Type'];
+$wantedElements ['Grade S.J.'] = $elementsForDisplay ['Dublin Core'] ['Replaces'];
 $wantedElements ['Date'] = $elementsForDisplay ['Dublin Core'] ['Date'];
 $wantedElements ['From'] = $elementsForDisplay ['Dublin Core'] ['Coverage'];
 $wantedElements ['To'] = $elementsForDisplay ['Dublin Core'] ['Spatial Coverage'];
-$wantedElements ['Recipient'] = $elementsForDisplay ['Dublin Core'] ['Format'];
+$wantedElements ['Recipient'] = $elementsForDisplay ['Dublin Core'] ['Audience'];
 $wantedElements ['Anterior desire'] = $elementsForDisplay ['Dublin Core'] ['Medium'];
 $wantedElements ['Destinations'] = $elementsForDisplay ['Dublin Core'] ['Publisher'];
 $wantedElements ['Models/Saints/Missionaries'] = $elementsForDisplay ['Dublin Core'] ['Subject'];
