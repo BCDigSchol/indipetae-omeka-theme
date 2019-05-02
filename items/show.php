@@ -8,7 +8,7 @@
 
 <div id="floatingwrapper">
 
-    <div class="left" style="width: 45%; float: left;">
+    <div class="left" style="width: 25%; float: left;">
 
 <?php echo all_element_texts('item'); ?>
 
@@ -21,7 +21,7 @@
 </div>
 <?php endif; ?>
 </div>
-<div id="right" style="width:50%; float:right; padding:3%; background-color:lightgrey;">
+<div id="right" style="width:60%; float:right; padding:3%; margin-top:1em;background-color:lightgrey;">
     <?php echo metadata('item', array('Dublin Core','Description')); ?>
 </div>
 

@@ -54,6 +54,11 @@ body {
 
 .show .element {
 border: none;
+font-size:22px;
+}
+
+h3 {
+  font-size:16px;
 }
 
 #content {
@@ -78,8 +83,8 @@ border: none;
 }
 
 /* Item page*/
-.element-set #element {
-  display:none;
+#transcription .element h3{
+  padding:0px;
 }
 /* footer */
 
