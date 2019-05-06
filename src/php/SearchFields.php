@@ -29,8 +29,8 @@ const SEARCH_FIELDS = [
         'controlled' => false
     ],
     FIELD_GRADE => [
-        'id' => '51',
-        'dc_label' => 'Type',
+        'id' => '76',
+        'dc_label' => 'Replaces',
         'controlled' => true,
         'values' => [
             'Coadjutor',
@@ -74,8 +74,8 @@ const SEARCH_FIELDS = [
         'controlled' => false
     ],
     FIELD_RECIPIENT => [
-        'id' => '42',
-        'dc_label' => 'Format',
+        'id' => '86',
+        'dc_label' => 'Audience',
         'controlled' => false
     ],
     FIELD_TRANSCRIPTION => [
@@ -110,7 +110,7 @@ const SEARCH_FIELDS = [
         'values' => [
             'Yes',
             'No',
-            'Blank'
+            'To Be Determined'
         ]
     ],
     FIELD_NOTES => [
