@@ -77,16 +77,13 @@ class ThemeHelpers
         );
     }
 
-    public static function advSearchFormAttributes($formActionUri, $formAttributes): string
+    public static function advSearchFormAttributes($formAttributes): string
     {
-        if (!empty($formActionUri)):
-            $formAttributes['action'] = $formActionUri;
-        else:
-            $formAttributes['action'] = url([
-                'controller' => 'items',
-                'action' => 'browse'
-            ]);
-        endif;
+        $formAttributes['action'] = url([
+            'controller' => 'elasticsearch',
+            'action' => 'search'
+        ]);
+
         $formAttributes['id'] = 'indipetae-advanced-search-form';
         $formAttributes['method'] = 'GET';
         return tag_attributes($formAttributes);
