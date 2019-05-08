@@ -54,11 +54,20 @@ body {
 
 .show .element {
 border: none;
-font-size:22px;
 }
 
 h3 {
   font-size:16px;
+  color:black;
+}
+
+.element-text {
+  font-size:16px;
+  color: #555555;
+}
+
+.element-text a{
+  color: #007bff;
 }
 
 #content {
@@ -78,8 +87,10 @@ h3 {
 }
 
 .item-pagination {
-  padding: 0px;
+  width:15%;
+  text-align:center;
   overflow:inherit;
+  background-color:white;
 }
 
 /* Item page*/
