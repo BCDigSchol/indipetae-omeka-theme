@@ -11,7 +11,6 @@ if(isset($elementsForDisplay['Item Type Metadata'])) {
     $wantedElements['Text'] = $elementsForDisplay['Item Type Metadata']['Text'];
 }
 //$wantedElements ['Title'] = $elementsForDisplay['Dublin Core'] ['Title'];//
-//$wantedElements ['Transcribed By'] = $elementsForDisplay ['Dublin Core'] ['Provenance'];//
 $wantedElements ['Transcription (front)'] = $elementsForDisplay ['Dublin Core'] ['Description'];
 $wantedElements ['Transcription (back)'] = $elementsForDisplay['Dublin Core'] ['Extent'];
 $wantedElements ['Sender'] = $elementsForDisplay ['Dublin Core'] ['Creator'];
@@ -29,6 +28,7 @@ $wantedElements ['Language of the Letter'] = $elementsForDisplay ['Dublin Core']
 $wantedElements ['Links'] = $elementsForDisplay ['Dublin Core'] ['Source'];
 $wantedElements ['Notes'] = $elementsForDisplay ['Dublin Core'] ['Abstract'];
 $wantedElements ['Call Number'] = $elementsForDisplay ['Dublin Core'] ['Identifier'];
+$wantedElements ['Contributor'] = $elementsForDisplay ['Dublin Core'] ['Contributor'];
 ?>
 
 <div class="element-set">
