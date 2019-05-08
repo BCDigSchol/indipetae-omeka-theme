@@ -11,9 +11,8 @@ if(isset($elementsForDisplay['Item Type Metadata'])) {
     $wantedElements['Text'] = $elementsForDisplay['Item Type Metadata']['Text'];
 }
 //$wantedElements ['Title'] = $elementsForDisplay['Dublin Core'] ['Title'];//
-//$wantedElements ['Document ID'] = $elementsForDisplay['Dublin Core'] ['Extent'];//
-//$wantedElements ['Transcribed By'] = $elementsForDisplay ['Dublin Core'] ['Provenance'];//
-$wantedElements ['Transcription'] = $elementsForDisplay ['Dublin Core'] ['Description'];
+$wantedElements ['Transcription (front)'] = $elementsForDisplay ['Dublin Core'] ['Description'];
+$wantedElements ['Transcription (back)'] = $elementsForDisplay['Dublin Core'] ['Extent'];
 $wantedElements ['Sender'] = $elementsForDisplay ['Dublin Core'] ['Creator'];
 $wantedElements ['Grade S.J.'] = $elementsForDisplay ['Dublin Core'] ['Replaces'];
 $wantedElements ['Date'] = $elementsForDisplay ['Dublin Core'] ['Date'];
@@ -21,7 +20,7 @@ $wantedElements ['From'] = $elementsForDisplay ['Dublin Core'] ['Coverage'];
 $wantedElements ['To'] = $elementsForDisplay ['Dublin Core'] ['Spatial Coverage'];
 $wantedElements ['Recipient'] = $elementsForDisplay ['Dublin Core'] ['Audience'];
 $wantedElements ['Anterior desire'] = $elementsForDisplay ['Dublin Core'] ['Medium'];
-$wantedElements ['Destinations'] = $elementsForDisplay ['Dublin Core'] ['Publisher'];
+$wantedElements ['Destination(s)'] = $elementsForDisplay ['Dublin Core'] ['Publisher'];
 $wantedElements ['Models/Saints/Missionaries'] = $elementsForDisplay ['Dublin Core'] ['Subject'];
 $wantedElements ['Other names'] = $elementsForDisplay ['Dublin Core'] ['Relation'];
 $wantedElements ['Left for mission lands'] = $elementsForDisplay ['Dublin Core'] ['Date Issued'];
@@ -29,6 +28,7 @@ $wantedElements ['Language of the Letter'] = $elementsForDisplay ['Dublin Core']
 $wantedElements ['Links'] = $elementsForDisplay ['Dublin Core'] ['Source'];
 $wantedElements ['Notes'] = $elementsForDisplay ['Dublin Core'] ['Abstract'];
 $wantedElements ['Call Number'] = $elementsForDisplay ['Dublin Core'] ['Identifier'];
+$wantedElements ['Contributor'] = $elementsForDisplay ['Dublin Core'] ['Contributor'];
 ?>
 
 <div class="element-set">
