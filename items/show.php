@@ -24,7 +24,7 @@
 <!--Placeholder for original code -->
 
 </div>
-<h3 class="transcription-heading" style="width:60%; float:right;">Transcription- front</h3>
+<h3 class="transcription-heading" style="width:60%; float:right;">Transcription</h3>
 <div id="right-col-1" style="width:60%; float:right; padding:3%; margin-top:1em;background-color:lightgrey;">
 
     <?php echo metadata('item', array('Dublin Core','Description')); ?>
