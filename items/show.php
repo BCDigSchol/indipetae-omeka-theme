@@ -9,20 +9,29 @@
 <div id="floatingwrapper">
 
     <div class="left" style="width: 25%; float: left;">
+      <?php echo all_element_texts('item'); ?>
 
-<?php echo all_element_texts('item'); ?>
+      <!-- The following returns all of the files associated with an item. -->
+      <?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
+      <div id="itemfiles" class="element">
+          <h3><?php echo __('Download PDF'); ?></h3>
+          <div class="element-text"><?php echo files_for_item(); ?></div>
+      </div>
+      <?php endif; ?>
 
+    </div>
 
-<!-- The following returns all of the files associated with an item. -->
-<?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
-<div id="itemfiles" class="element">
-    <h3><?php echo __('Files'); ?></h3>
-    <div class="element-text"><?php echo files_for_item(); ?></div>
+<!--Placeholder for original code -->
+
 </div>
-<?php endif; ?>
-</div>
-<div id="right" style="width:60%; float:right; padding:3%; margin-top:1em;background-color:lightgrey;">
+<h3 class="transcription-heading" style="width:60%; float:right;">Transcription- front</h3>
+<div id="right-col-1" style="width:60%; float:right; padding:3%; margin-top:1em;background-color:lightgrey;">
+
     <?php echo metadata('item', array('Dublin Core','Description')); ?>
+</div>
+<h3 class="transcription-heading" style="width:60%; float:right;">Transcription- back</h3>
+<div id="right-col-2" style="width:60%; float:right; padding:3%; margin-top:1em;background-color:lightgrey;">
+    <?php echo metadata('item', array('Dublin Core','Extent')); ?>
 </div>
 
 </div>
