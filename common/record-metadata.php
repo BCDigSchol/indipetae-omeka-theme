@@ -8,10 +8,9 @@
 
 $wantedElements = array();
 if(isset($elementsForDisplay['Item Type Metadata'])) {
-    $wantedElements['Text'] = $elementsForDisplay['Item Type Metadata']['Text'];
 }
 //$wantedElements ['Title'] = $elementsForDisplay['Dublin Core'] ['Title'];//
-$wantedElements ['Transcription (front)'] = $elementsForDisplay ['Dublin Core'] ['Description'];
+$wantedElements ['Transcription'] = $elementsForDisplay ['Dublin Core'] ['Description'];
 $wantedElements ['Transcription (back)'] = $elementsForDisplay['Dublin Core'] ['Extent'];
 $wantedElements ['Sender'] = $elementsForDisplay ['Dublin Core'] ['Creator'];
 $wantedElements ['Grade S.J.'] = $elementsForDisplay ['Dublin Core'] ['Replaces'];
@@ -28,7 +27,7 @@ $wantedElements ['Language of the Letter'] = $elementsForDisplay ['Dublin Core']
 $wantedElements ['Links'] = $elementsForDisplay ['Dublin Core'] ['Source'];
 $wantedElements ['Notes'] = $elementsForDisplay ['Dublin Core'] ['Abstract'];
 $wantedElements ['Call Number'] = $elementsForDisplay ['Dublin Core'] ['Identifier'];
-$wantedElements ['Contributor'] = $elementsForDisplay ['Dublin Core'] ['Contributor'];
+//$wantedElements ['Contributor'] = $elementsForDisplay ['Dublin Core'] ['Contributor'];//
 ?>
 
 <div class="element-set">
@@ -46,6 +45,7 @@ $wantedElements ['Contributor'] = $elementsForDisplay ['Dublin Core'] ['Contribu
 
 <?php foreach ($elementsForDisplay as $setName => $setElements): ?>
 <div class="element-set">
+  <h2><?php echo html_escape(__($setName)); ?></h2>
     <?php foreach ($setElements as $elementName => $elementInfo): ?>
     <div id="<?php echo text_to_id(html_escape("$setName $elementName")); ?>" class="element">
         <h3><?php echo html_escape(__($elementName)); ?></h3>
