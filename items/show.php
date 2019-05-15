@@ -9,96 +9,17 @@
 <div id="floatingwrapper">
 
     <div class="left" style="width: 25%; float: left;">
-      <div class="element">
-        <h3>Sender</h3>
-        <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Creator')); ?>
+      <?php echo all_element_texts('item'); ?>
+
+      <!-- The following returns all of the files associated with an item. -->
+      <?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
+      <div id="itemfiles" class="element">
+          <h3><?php echo __('Download PDF'); ?></h3>
+          <div class="element-text"><?php echo files_for_item(); ?></div>
+      </div>
+      <?php endif; ?>
+
     </div>
-    </div>
-    <div class="element">
-      <h3>Grade S.J.</h3>
-      <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Replaces')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>Date</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Date')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>From</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Coverage')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>To</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Spatial Coverage')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>Recipient</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Audience')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>Anterior Desire</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Medium')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>Destinations</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Publisher')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>Models/Saints/Missionaries</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Subject')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>Other names</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Relation')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>Left for mission lands</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Date Issued')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>Language of the letter</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Language')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>Links</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Source')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>Notes</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Abstract')); ?>
-    </div>
-  </div>
-  <div class="element">
-    <h3>Call number</h3>
-    <div class="element-text">
-      <?php echo metadata('item', array('Dublin Core','Identifier')); ?>
-    </div>
-  </div>
 
 <!--Placeholder for original code -->
 
@@ -110,7 +31,7 @@
 </div>
 <h3 class="transcription-heading" style="width:60%; float:right;">Transcription- back</h3>
 <div id="right-col-2" style="width:60%; float:right; padding:3%; margin-top:1em;background-color:lightgrey;">
-    <?php echo metadata('item', array('Dublin Core','Description')); ?>
+    <?php echo metadata('item', array('Dublin Core','Extent')); ?>
 </div>
 
 </div>
