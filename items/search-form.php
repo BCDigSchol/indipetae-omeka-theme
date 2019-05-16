@@ -6,8 +6,8 @@ use BCLib\Indipetae\ThemeHelpers;
 ?>
 
     <form <?= ThemeHelpers::advSearchFormAttributes($formAttributes) ?>>
-
-        <fieldset class="advanced-search-fieldset">
+      <div id="adv-search-wrapper">
+      <div class="search-groups"  <fieldset class="advanced-search-fieldset">
             <legend>Names</legend>
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_SENDER) ?>
 
@@ -17,7 +17,8 @@ use BCLib\Indipetae\ThemeHelpers;
 
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_OTHER_NAMES) ?>
         </fieldset>
-
+      </div>
+      <div class="search-groups">
         <fieldset class="advanced-search-fieldset">
             <legend>Places</legend>
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_FROM) ?>
@@ -26,13 +27,15 @@ use BCLib\Indipetae\ThemeHelpers;
 
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DESTINATIONS) ?>
         </fieldset>
-
+      </div>
+      <div class="search-groups">
         <fieldset class="advanced-search-fieldset">
             <legend>Dates</legend>
 
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DATE) ?>
         </fieldset>
-
+      </div>
+      <div class="search-groups">
         <fieldset class="advanced-search-fieldset">
             <legend>Other</legend>
 
@@ -44,7 +47,8 @@ use BCLib\Indipetae\ThemeHelpers;
 
             <h2>PLACEHOLDER FOR ARCHIVE FIELD</h2>
         </fieldset>
-
+      </div>
+    </div>
         <input type="submit">
 
     </form>
