@@ -64,7 +64,7 @@
 
             <?php echo theme_header_image(); ?>
 
-            <div id="top-nav" role="navigation">
+            <nav id="top-nav" class="navbar" role="navigation">
                 <?php echo public_nav_main(); ?>
                 <div id="search-container" role="search">
                     <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
@@ -73,8 +73,8 @@
                     <?php echo search_form(); ?>
                     <?php endif; ?>
                 </div>
-            </div>
-              
+            </nav>
+
 
         </header>
 

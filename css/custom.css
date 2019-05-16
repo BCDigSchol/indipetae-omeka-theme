@@ -79,6 +79,7 @@ h3 {
   color:black;
   padding-top:10%;
   padding-bottom:0px;
+  font-weight:bold;
 }
 
 .element-text {
@@ -120,6 +121,10 @@ h3 {
 
 .transcription-heading {
   padding-top:2.5%;
+}
+
+h1 {
+  text-transform: capitalize;
 }
 
 /* browse results*/
@@ -252,9 +257,6 @@ h2 .homepage_heading {
   .navigtion .nav-menu {
     margin: 0px;
   }
-
-
-
 
   #search-container {
     width:100%;

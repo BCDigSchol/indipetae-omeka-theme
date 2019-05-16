@@ -526,8 +526,8 @@ body {
   height: auto;
   width: auto;
   padding: .5em;
-  border: 1px blue dashed;
-  color: #BE75CB; }
+  border: 1px black dashed;
+  color: #b30000; }
 
 .intro {
   font-style: italic; }
@@ -560,7 +560,7 @@ blockquote {
     color: white;
     text-decoration: none; }
   .view-items-link:active {
-    background-color: #BE75CB; }
+    background-color: #b30000; }
 
 #outputs {
   margin-top: 1em; }
@@ -892,13 +892,13 @@ button,
   input[type=submit]:hover,
   button:hover,
   .button:hover {
-    background-color: #684B98;
+    background-color: #8a100b;
     color: white;
     text-decoration: none; }
   input[type=submit]:active,
   button:active,
   .button:active {
-    background-color: #BE75CB; }
+    background-color: #b30000; }
 
 .button:focus {
   outline: -webkit-focus-ring-color auto 5px; }
@@ -1195,11 +1195,11 @@ body.files .item-file {
     border: 0;
     display: initial; }
     #simple-pages-breadcrumbs a:hover {
-      background-color: #684B98;
+      background-color: #8a100b;
       color: white;
       text-decoration: none; }
     #simple-pages-breadcrumbs a:active {
-      background-color: #BE75CB; }
+      background-color: #b30000; }
 
 /* -------------------------------------------------------------------------*/
 /* Geolocation */
@@ -1265,7 +1265,7 @@ body.files .item-file {
         margin-left: 2em; }
   #exhibit-pages.full .current-page {
     display: block;
-    background-color: #BE75CB;
+    background-color: #b30000;
     padding: .5em;
     color: white; }
   #exhibit-pages.full #secondary-nav {
@@ -1336,11 +1336,11 @@ body.files .item-file {
         margin-bottom: .5em;
         border: 0; }
         #exhibit-child-pages .exhibit-child-nav li a:hover {
-          background-color: #684B98;
+          background-color: #8a100b;
           color: white;
           text-decoration: none; }
         #exhibit-child-pages .exhibit-child-nav li a:active {
-          background-color: #BE75CB; }
+          background-color: #b30000; }
         #exhibit-child-pages .exhibit-child-nav li a:before {
           content: "\2014\0020"; }
 
@@ -1365,7 +1365,7 @@ body.files .item-file {
   #exhibit-page-navigation .current-page {
     clear: both;
     display: block;
-    background-color: #684B98;
+    background-color: #8a100b;
     padding: .5em 0;
     color: white;
     margin-top: .5em; }
