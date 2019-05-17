@@ -8,7 +8,11 @@ use BCLib\Indipetae\ThemeHelpers;
     <form <?= ThemeHelpers::advSearchFormAttributes($formAttributes) ?>>
       <div id="adv-search-wrapper">
       <div class="search-groups"  <fieldset class="advanced-search-fieldset">
+<<<<<<< HEAD
             <legend>Search by <strong>names</strong></legend>
+=======
+            <legend>Names</legend>
+>>>>>>> 7b071fea058ce510f9794111d7e5be0887748822
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_SENDER) ?>
 
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_RECIPIENT) ?>
