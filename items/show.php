@@ -8,7 +8,7 @@
 
 <div id="floatingwrapper">
 
-    <div class="left" style="width: 25%; float: left;">
+    <div class="left" style="width: 20%; float: left;">
       <?php echo all_element_texts('item'); ?>
 
       <!-- The following returns all of the files associated with an item. -->
@@ -24,13 +24,13 @@
 <!--Placeholder for original code -->
 
 </div>
-<h3 class="transcription-heading" style="width:60%; float:right;">Transcription- front</h3>
-<div id="right-col-1" style="width:60%; float:right; padding:3%; margin-top:1em;background-color:lightgrey;">
+<h3 class="transcription-heading" style="width:70%; float:right;">Transcription</h3>
+<div id="right-col-1" style="width:70%; float:right; padding:3%; margin-top:1em;background-color:lightgrey;">
 
     <?php echo metadata('item', array('Dublin Core','Description')); ?>
 </div>
-<h3 class="transcription-heading" style="width:60%; float:right;">Transcription- back</h3>
-<div id="right-col-2" style="width:60%; float:right; padding:3%; margin-top:1em;background-color:lightgrey;">
+<h3 class="transcription-heading" style="width:70%; float:right;">Transcription- back</h3>
+<div id="right-col-2" style="width:70%; float:right; padding:3%; margin-top:1em;background-color:lightgrey;">
     <?php echo metadata('item', array('Dublin Core','Extent')); ?>
 </div>
 

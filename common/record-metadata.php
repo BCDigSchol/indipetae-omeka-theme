@@ -10,8 +10,8 @@ $wantedElements = array();
 if(isset($elementsForDisplay['Item Type Metadata'])) {
 }
 //$wantedElements ['Title'] = $elementsForDisplay['Dublin Core'] ['Title'];//
-$wantedElements ['Transcription'] = $elementsForDisplay ['Dublin Core'] ['Description'];
-$wantedElements ['Transcription (back)'] = $elementsForDisplay['Dublin Core'] ['Extent'];
+//$wantedElements ['Transcription'] = $elementsForDisplay ['Dublin Core'] ['Description'];//
+//$wantedElements ['Transcription (back)'] = $elementsForDisplay['Dublin Core'] ['Extent'];//
 $wantedElements ['Sender'] = $elementsForDisplay ['Dublin Core'] ['Creator'];
 $wantedElements ['Grade S.J.'] = $elementsForDisplay ['Dublin Core'] ['Replaces'];
 $wantedElements ['Date'] = $elementsForDisplay ['Dublin Core'] ['Date'];

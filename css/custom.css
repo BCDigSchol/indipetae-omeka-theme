@@ -2,6 +2,10 @@
   padding: 0px;
 }
 
+.row {
+  justify-content: space-around;
+}
+
 body .header a {
     text-transform: uppercase;
     text-decoration: none;
@@ -16,6 +20,20 @@ body {
   justify-content: center;
 }
 
+/*Advanced Search*/
+.search-groups {
+  background-color:#dccaa0;
+  margin-bottom:3%;
+}
+
+legend {
+  padding:1%;
+}
+
+.advanced-search-field {
+  padding-left:3%;
+  background-color:#e8ddc5;
+}
 /*Content*/
 
 #banner-wrapper {
@@ -59,6 +77,9 @@ border: none;
 h3 {
   font-size:16px;
   color:black;
+  padding-top:10%;
+  padding-bottom:0px;
+  font-weight:bold;
 }
 
 .element-text {
@@ -97,6 +118,21 @@ h3 {
 #transcription .element h3{
   padding:0px;
 }
+
+.transcription-heading {
+  padding-top:2.5%;
+}
+
+h1 {
+  text-transform: capitalize;
+}
+
+/* browse results*/
+
+.item h2 {
+  font-size:18px;
+}
+
 /* footer */
 
   footer {
@@ -112,13 +148,21 @@ h3 {
 #footer-container {
   display: flex;
   flex-direction: column;
+  margin-left:10%;
+  margin-right: 10%;
 }
 
 
 #notes-wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    flex-wrap:wrap-reverse;
+    }
+
+    .footer-title {
+      font-size: 18px;
+      font-weight: bold;
+
     }
 
 .site-links {
@@ -142,6 +186,8 @@ h3 {
 
 .footer-text {
   margin-left:3%;
+  width:75%;
+  float:right;
 }
 
 .copyright {
@@ -158,4 +204,77 @@ h2 .homepage_heading {
   color: #872334;
   text-transform: uppercase;
   font-size: 20px;
+}
+
+/* Responsiveness*/
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .header-brand {
+      width:90%;
+    }
+
+    #top-nav .nav-menu {
+      width:100%;
+    }
+
+    #top-nav {
+      flex-direction:column;
+    }
+
+    #search-container {
+      width: 80%;
+      padding: 2%;
+    }
+
+    #content {
+      padding: 0px;
+    }
+
+    #banner-wrapper {
+      height: auto;
+    }
+
+    .banner-text {
+      font-size:2em;
+      padding: 5%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    display:none;
+  }
+
+  #top-nav {
+    flex-direction:column;
+  }
+
+  #top-nav .nav-menu {
+    flex-direction:column;
+    width:100%;
+  }
+
+  .navigtion .nav-menu {
+    margin: 0px;
+  }
+
+  #search-container {
+    width:100%;
+    padding: 2%;
+  }
+
+  #content {
+    padding: 2%;
+  }
+
+  #banner-wrapper {
+    height:auto;
+  }
+
+  .banner-text {
+    text-align:center;
+    font-size:1.5em;
+    letter-spacing:2px;
+    padding:2%;
+  }
 }
