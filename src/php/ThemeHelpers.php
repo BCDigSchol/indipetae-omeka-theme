@@ -70,7 +70,7 @@ class ThemeHelpers
             @$rows['terms'],
             [
                 'size' => '20',
-                'title' => __("Search Terms"),
+                'title' => __('Search Terms'),
                 'id' => null,
                 'class' => 'advanced-search-terms'
             ]
@@ -135,7 +135,7 @@ HTML;
     private static function advSearchTextInput(array $field, string $field_name): string
     {
         return <<<TAG
-<input class="advanced-search-field__input" type="text" id="$field_name" name="{$field['id']}" />
+<input class="advanced-search-field__input" type="text" id="$field_name" name="$field_name" />
 TAG;
     }
 

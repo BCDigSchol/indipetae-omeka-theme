@@ -1,4 +1,9 @@
-<?php $result_img =  record_image($record, 'thumbnail', ['class' => 'elasticsearch-result-image']); ?>
+<?php
+try {
+    $result_img = record_image($record, 'thumbnail', ['class' => 'elasticsearch-result-image']);
+} catch (Exception $e) {
+}
+?>
 <?php if ($result_img): ?><a href="<?= $url ?>"><?= $result_img ?></a><?php endif; ?>
 
 <ul>
