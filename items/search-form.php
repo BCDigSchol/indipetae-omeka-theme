@@ -49,8 +49,8 @@ use BCLib\Indipetae\ThemeHelpers;
         </fieldset>
       </div>
     </div>
-        <input type="submit">
-
+        <input type="submit" id="indipetae-advanced-search-form__submit-button">
+        <button id="indipetae-advanced-search-form__reset-button">Reset</button>
     </form>
 
 <?= js_tag('indipetae.bundle') ?>

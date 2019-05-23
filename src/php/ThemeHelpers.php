@@ -151,7 +151,7 @@ TAG;
         $options_tags = implode("\n", $options);
 
         return <<<TAG
-<select class="advanced-search-field__select" type="text" id="$field_name" name="$field_id">
+<select class="advanced-search-field__select" type="text" id="$field_name" name="$field_name">
         $options_tags
 </select>
 TAG;

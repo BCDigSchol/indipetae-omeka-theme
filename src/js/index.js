@@ -1,4 +1,5 @@
 const form = document.getElementById('indipetae-advanced-search-form');
+const resetButton = document.getElementById('indipetae-advanced-search-form__reset-button');
 
 form.onsubmit = function(event) {
     let queryArray = [];
@@ -15,5 +16,11 @@ form.onsubmit = function(event) {
     }
 
     const queryString = queryArray.join('&');
+    form.reset();
     window.location = form.action + `?${queryString}`;
+};
+
+resetButton.onclick = function() {
+    form.reset();
+    return false;
 };

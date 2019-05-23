@@ -34,6 +34,12 @@ legend {
   padding-left:3%;
   background-color:#e8ddc5;
 }
+
+#indipetae-advanced-search-form__reset-button, input#indipetae-advanced-search-form__submit-button {
+    float: left;
+    margin-top: 0;
+}
+
 /*Content*/
 
 #banner-wrapper {
