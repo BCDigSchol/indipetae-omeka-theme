@@ -21,6 +21,7 @@ const FIELD_NOTES = 'notes';
 const FIELD_TO = 'to';
 const FIELD_LEFT_FOR_MISSION = 'left_for_mission';
 const FIELD_DOCUMENT_ID = 'document_id';
+const FIELD_ARCHIVE = 'collection';
 
 const SEARCH_FIELDS = [
     FIELD_TITLE => [
@@ -138,5 +139,11 @@ const SEARCH_FIELDS = [
         'id' => '78',
         'dc_label' => 'Extent',
         'controlled' => false
+    ],
+    FIELD_ARCHIVE => [
+        'id' => '111111',
+        'dc_label' => 'Collection',
+        'controlled' => true,
+        'values' => ['New Society (1814-1939']
     ]
 ];

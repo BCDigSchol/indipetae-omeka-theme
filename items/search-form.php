@@ -45,7 +45,7 @@ use BCLib\Indipetae\ThemeHelpers;
 
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_LEFT_FOR_MISSION) ?>
 
-            <h2>PLACEHOLDER FOR ARCHIVE FIELD</h2>
+            <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_ARCHIVE) ?>
         </fieldset>
       </div>
     </div>
