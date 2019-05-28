@@ -11,14 +11,6 @@
     <div class="left" style="width: 20%; float: left;">
       <?php echo all_element_texts('item'); ?>
 
-      <!-- The following returns all of the files associated with an item. -->
-      <?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
-      <div id="itemfiles" class="element">
-          <h3><?php echo __('Download PDF'); ?></h3>
-          <div class="element-text"><?php echo files_for_item(); ?></div>
-      </div>
-      <?php endif; ?>
-
     </div>
 
 <!--Placeholder for original code -->
@@ -58,8 +50,16 @@
     <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
 </div>
 
+<!-- The following returns all of the files associated with an item. -->
+<?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
+<div id="itemfiles" class="element">
+    <h3><?php echo __('Download PDF'); ?></h3>
+    <div class="element-text"><?php echo files_for_item(); ?></div>
+</div>
+<?php endif; ?>
+
 <div id="item-output-formats" class="element">
-    <h3><?php echo __('Output Formats'); ?></h3>
+    <h3><?php echo __('Export Metadata'); ?></h3>
     <div class="element-text"><?php echo output_format_list(); ?></div>
 </div>
 

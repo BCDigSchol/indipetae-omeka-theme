@@ -1,5 +1,4 @@
         </article>
-
         <footer>
   <div id="footer-container">
           <div id="iajs-note">
@@ -26,7 +25,7 @@
 
     </div><!-- end wrap -->
 
-    <script>
+    <script type="text/javascript">
 
     jQuery(document).ready(function() {
 
@@ -35,5 +34,12 @@
         Omeka.megaMenu('#top-nav');
     });
     </script>
+
+    <script type="text/javascript">
+    jQuery(".element-set .element:not(:has(>.element-text))").each(function() {
+        jQuery(this).addClass("element-hide");
+    })
+    </script>
+
 </body>
 </html>
