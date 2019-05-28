@@ -5,9 +5,10 @@ use BCLib\Indipetae\ThemeHelpers;
 
 ?>
 
-    <form <?= ThemeHelpers::advSearchFormAttributes($formAttributes) ?>>
-      <div id="adv-search-wrapper">
-      <div class="search-groups"  <fieldset class="advanced-search-fieldset">
+<form <?= ThemeHelpers::advSearchFormAttributes($formAttributes) ?>>
+    <div id="adv-search-wrapper">
+        <div class="search-groups"
+        <fieldset class="advanced-search-fieldset">
             <legend>Search by <strong>names</strong></legend>
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_SENDER) ?>
 
@@ -17,8 +18,8 @@ use BCLib\Indipetae\ThemeHelpers;
 
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_OTHER_NAMES) ?>
         </fieldset>
-      </div>
-      <div class="search-groups">
+    </div>
+    <div class="search-groups">
         <fieldset class="advanced-search-fieldset">
             <legend>Search by <strong>places</strong></legend>
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_FROM) ?>
@@ -27,15 +28,15 @@ use BCLib\Indipetae\ThemeHelpers;
 
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DESTINATIONS) ?>
         </fieldset>
-      </div>
-      <div class="search-groups">
+    </div>
+    <div class="search-groups">
         <fieldset class="advanced-search-fieldset">
             <legend>Search by <strong>dates</strong></legend>
 
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DATE) ?>
         </fieldset>
-      </div>
-      <div class="search-groups">
+    </div>
+    <div class="search-groups">
         <fieldset class="advanced-search-fieldset">
             <legend>Search by <strong>other fields</strong></legend>
 
@@ -47,10 +48,12 @@ use BCLib\Indipetae\ThemeHelpers;
 
             <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_ARCHIVE) ?>
         </fieldset>
-      </div>
     </div>
-        <input type="submit" id="indipetae-advanced-search-form__submit-button">
-        <button id="indipetae-advanced-search-form__reset-button">Reset</button>
-    </form>
+    <input type="submit" id="indipetae-advanced-search-form__submit-button">
+    <button id="indipetae-advanced-search-form__reset-button">Reset</button>
+</form>
 
 <?= js_tag('indipetae.bundle') ?>
+<script>
+    OmekaElasticsearch.advancedSearch();
+</script>

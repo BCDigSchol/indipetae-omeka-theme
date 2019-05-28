@@ -6,8 +6,12 @@ module.exports = {
     },
     output: {
         filename: 'indipetae.bundle.js',
-        path: path.resolve(__dirname, 'javascripts')
+        path: path.resolve(__dirname, 'javascripts'),
+        libraryTarget: 'var',
+        libraryExport: "default",
+        library: 'OmekaElasticsearch'
     },
+    devtool: 'source-map',
     module: {
         rules: [
             { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
