@@ -73,8 +73,9 @@
 
 </div>
 
+<?= foot() ?>
+
 <?= js_tag('indipetae.bundle') ?>
 <script>
     OmekaElasticsearch.resultSorter();
 </script>
-<?= foot() ?>

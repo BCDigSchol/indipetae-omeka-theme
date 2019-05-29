@@ -55,7 +55,7 @@ function handleSubmit(event) {
 
     // Redirect page to the search URL.
     window.location = form.action + `?${queryString}`;
-};
+}
 
 /**
  *  Empty the form
