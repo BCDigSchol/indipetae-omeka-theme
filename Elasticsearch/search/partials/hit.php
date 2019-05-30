@@ -1,7 +1,7 @@
 <div class="elasticsearch-result">
 
     <?php $record = Elasticsearch_Utils::getRecord($hit); ?>
-    <?php $record_url = $hit['_source']['url']; ?>
+    <?php $record_url = record_url($record) ?>
     <?php $title = $hit['_source']['title']; ?>
     <?php $partial_params = [
         'hit' => $hit['_source'],
