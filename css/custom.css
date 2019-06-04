@@ -26,13 +26,33 @@ body {
   margin-bottom:3%;
 }
 
-legend {
-  padding:1%;
+.adv-select__opts ul {
+    padding: 0;
+    margin-bottom: 0;
 }
 
-.advanced-search-field {
-  padding-left:3%;
-  background-color:#e8ddc5;
+.adv-select__opt {
+    cursor: pointer;
+    margin: .5em;
+    list-style: none;
+    color: darkslategray
+}
+
+.adv-select__opt:hover {
+    filter: brightness(155%);
+}
+
+.advanced-search-field__delete-button {
+    display: inline;
+}
+
+.advanced-search-field__label-row {
+    text-align: right;
+    font-weight: 400;
+}
+
+legend {
+  padding:1%;
 }
 
 #indipetae-advanced-search-form__reset-button, input#indipetae-advanced-search-form__submit-button {

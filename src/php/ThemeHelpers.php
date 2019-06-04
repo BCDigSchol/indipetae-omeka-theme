@@ -105,10 +105,17 @@ class ThemeHelpers
         $field_label = __($field['dc_label']);
 
         return <<<HTML
-            <div class="advanced-search-field">
-                <label class="advanced-search-field__label" for="$field_name">$field_label</label>
-                $input_tag
-            </div>
+<template id="adv-search__{$field_name}_template" style="display: none">
+    <div class="advanced-search-field adv-search-field--{$field_name} row">
+        <div class="col-md-2 advanced-search-field__label-row">
+            <label class="advanced-search-field__label" for="$field_name">$field_label</label>
+        </div>
+        <div class="col-md-10">
+             $input_tag
+             <button class="advanced-search-field__delete-button" data-field="$field_name">X</button>
+        </div>
+    </div>
+</template>
 HTML;
     }
 
@@ -145,9 +152,10 @@ TAG;
 
         $values = ($field['values'] === 'from_db') ? self::getElementTextListFromDB($field_id) : $field['values'];
 
-        $options = array_map( self::class.'::selectOption', $values);
+        $options = array_map(self::class . '::selectOption', $values);
 
-        array_unshift($options,'<option value="" class="advanced-search-field__please_select" selected disabled hidden >Select</option>');
+        array_unshift($options,
+            '<option value="" class="advanced-search-field__please_select" selected disabled hidden >Select</option>');
         $options_tags = implode("\n", $options);
 
         return <<<TAG
