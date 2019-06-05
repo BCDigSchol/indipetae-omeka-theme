@@ -19,6 +19,9 @@ const resetButton = document.getElementById('indipetae-advanced-search-form__res
 
 const addedFields = new Set();
 
+const grayedOutClass = 'adv-select__opt--grayed-out';
+
+
 /**
  * Handle a form submission
  *
@@ -48,9 +51,6 @@ function handleSubmit(event) {
     }
     const queryString = queryArray.join('&');
 
-    // Reset the form for the next sbumission
-    form.reset();
-
     // Redirect page to the search URL.
     window.location = form.action + `?${queryString}`;
 }
@@ -63,8 +63,8 @@ function handleSubmit(event) {
  */
 function resetForm(event) {
     addedFields.forEach((field) => {
-            console.log(`adv-search-field--${field}`);
             document.querySelector(`.adv-search-field--${field}`).remove();
+            unGrayOut(field);
         }
     );
     addedFields.clear();
@@ -84,17 +84,27 @@ function addField(event) {
 }
 
 function grayOut(element) {
-    console.log('foo');
-    // @todo Make element gray out code
+    element.classList.add(grayedOutClass);
 }
 
-function deleteField(event) {
+function unGrayOut(fieldName) {
+    document.querySelector(`.adv-select__opt--${fieldName}`).classList.remove(grayedOutClass)
+}
+
+function handleDeleteClick(event) {
     if (event.target.matches('.advanced-search-field__delete-button')) {
         event.preventDefault();
-        const field = event.target.dataset.field;
+        deleteSearchField(event.target);
+    }
+}
+
+function deleteSearchField(element) {
+    if (element.matches('.advanced-search-field__delete-button')) {
+        const field = element.dataset.field;
         const input = document.querySelector(`#applied-fields .adv-search-field--${field}`);
         input.remove();
         addedFields.delete(field);
+        unGrayOut(field);
     }
 }
 
@@ -105,7 +115,7 @@ function advancedSearch() {
     document.addEventListener("DOMContentLoaded", () => {
         form.addEventListener('submit', handleSubmit);
         resetButton.addEventListener('click', resetForm);
-        appliedFields.addEventListener('click', deleteField);
+        appliedFields.addEventListener('click', handleDeleteClick);
 
         const opts = document.querySelectorAll('.adv-select__opt');
         opts.forEach((opt) => {

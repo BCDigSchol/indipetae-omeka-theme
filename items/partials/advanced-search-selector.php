@@ -5,10 +5,10 @@
         </button>
         <div class="dropdown-menu adv-select__opts">
             <ul>
-                <li class="adv-select__opt" data-field="sender">Sender</li>
-                <li class="adv-select__opt" data-field="recipient">Recipient</li>
-                <li class="adv-select__opt" data-field="model">Models/Saints/Missionaries</li>
-                <li class="adv-select__opt" data-field="other_names">Other persons mentioned</li>
+                <li class="adv-select__opt adv-select__opt--sender" data-field="sender">Sender</li>
+                <li class="adv-select__opt adv-select__opt--recipient" data-field="recipient">Recipient</li>
+                <li class="adv-select__opt adv-select__opt--model" data-field="model">Models/Saints/Missionaries</li>
+                <li class="adv-select__opt adv-select__opt--other_names" data-field="other_names">Other persons mentioned</li>
             </ul>
         </div>
     </div>
@@ -21,9 +21,9 @@
         </button>
         <div class="dropdown-menu adv-select__opts">
             <ul>
-                <li class="adv-select__opt" data-field="from">From</li>
-                <li class="adv-select__opt" data-field="to">To</li>
-                <li class="adv-select__opt" data-field="destinations">Destination</li>
+                <li class="adv-select__opt adv-select__opt--from" data-field="from">From</li>
+                <li class="adv-select__opt adv-select__opt--to" data-field="to">To</li>
+                <li class="adv-select__opt adv-select__opt--destinations" data-field="destinations">Destination</li>
             </ul>
         </div>
     </div>
@@ -36,7 +36,7 @@
         </button>
         <div class="dropdown-menu adv-select__opts">
             <ul>
-                <li class="adv-select__opt" data-field="date">Date</li>
+                <li class="adv-select__opt adv-select__opt--date" data-field="date">Date</li>
             </ul>
         </div>
     </div>

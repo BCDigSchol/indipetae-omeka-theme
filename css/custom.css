@@ -42,6 +42,15 @@ body {
     filter: brightness(155%);
 }
 
+.adv-select__opt--grayed-out {
+    cursor: initial;
+    color: #b3b4b2;
+}
+
+.adv-select__opt--grayed-out:hover {
+    filter: none;
+}
+
 .advanced-search-selectors .btn-group.dropright {
     min-width: 65%;
 }
