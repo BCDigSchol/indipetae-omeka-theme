@@ -17,7 +17,7 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse'));
 
 <?php
 $sortLinks[__('Sender')] = 'Dublin Core,Creator';
-$sortLinks[__('From')] = 'Dublin Core,Coverage';
+$sortLinks[__('From')] = 'Dublin Core,From';
 $sortLinks[__('Date')] = 'Dublin Core,Date';
 ?>
 <div id="sort-links">
@@ -36,7 +36,6 @@ $sortLinks[__('Date')] = 'Dublin Core,Date';
     </div>
     <?php endif; ?>
 
-<!--Removed the description snippet from the public view-->
     <?php /*<? php <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
     <div class="item-description">
         <?php echo $description; ?>
@@ -60,7 +59,7 @@ $sortLinks[__('Date')] = 'Dublin Core,Date';
 <?php echo pagination_links(); ?>
 
 <div id="outputs">
-    <span class="outputs-label"><?php echo __('Output Formats'); ?></span>
+    <span class="outputs-label"><?php echo __('Export All Metadata'); ?></span>
     <?php echo output_format_list(false); ?>
 </div>
 
