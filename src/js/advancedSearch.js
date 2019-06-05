@@ -62,13 +62,19 @@ function handleSubmit(event) {
  * @return {boolean}
  */
 function resetForm(event) {
+    addedFields.forEach((field) => {
+            console.log(`adv-search-field--${field}`);
+            document.querySelector(`.adv-search-field--${field}`).remove();
+        }
+    );
+    addedFields.clear();
     form.reset();
-    return false;
+    event.preventDefault();
 }
 
 function addField(event) {
     const field = event.target.dataset.field;
-    if (! addedFields.has(field)) {
+    if (!addedFields.has(field)) {
         const template = document.querySelector(`#adv-search__${field}_template`);
         const clone = document.importNode(template.content, true);
         addedFields.add(field);
