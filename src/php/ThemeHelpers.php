@@ -112,7 +112,7 @@ class ThemeHelpers
         </div>
         <div class="col-md-10">
              $input_tag
-             <button class="advanced-search-field__delete-button" data-field="$field_name">X</button>
+             <button class="advanced-search-field__delete-button" data-field="$field_name">Remove $field_label</button>
         </div>
     </div>
 </template>

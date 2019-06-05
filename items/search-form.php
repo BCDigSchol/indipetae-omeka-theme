@@ -22,8 +22,12 @@ use BCLib\Indipetae\ThemeHelpers;
                     </div>
                 </div>
             </div>
-            <input type="submit" id="indipetae-advanced-search-form__submit-button">
-            <button id="indipetae-advanced-search-form__reset-button">Reset</button>
+            <div class="row">
+                <div class="indipetae-advanced-search-form__buttons col-md-10 offset-md-2">
+                    <input type="submit" id="indipetae-advanced-search-form__submit-button">
+                    <button id="indipetae-advanced-search-form__reset-button">Reset</button>
+                </div>
+            </div>
         </form>
     </div>
 </div>
