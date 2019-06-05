@@ -61,16 +61,17 @@ legend {
 }
 
 /* Search results */
+#elasticsearch-results {
+    padding-left: 1em;
+}
+
 .elasticsearch-sort-select {
     float: right;
 }
 
-.elasticsearch-result h3, #elasticsearch-sidebar h3 {
+.elasticsearch-result h3, #elasticsearch-sidebar h3,#elasticsearch-sidebar h4 {
     padding-top: 0;
-}
-
-.elasticsearch-result__title {
-    font-size: 1.1em;
+    font-size: 18px;
 }
 
 .elasticsearch-result {
@@ -84,6 +85,24 @@ legend {
 
 .elasticsearch-result__metadata {
     font-size: .9em;
+}
+
+
+#elasticsearch-sidebar {
+    padding-right: 1em;
+}
+
+#elasticsearch-filters ul {
+    padding-left: 1em;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 2em;
+    font-size: .9em;
+}
+
+#elasticsearch-filters h4 {
+    margin: 0;
+    padding: 0;
 }
 
 /*Content*/
