@@ -69,8 +69,21 @@ legend {
     padding-top: 0;
 }
 
+.elasticsearch-result__title {
+    font-size: 1.1em;
+}
+
 .elasticsearch-result {
-    margin-bottom: 3em;
+    margin-bottom: 2.5em;
+    border: none;
+}
+
+.elasticsearch-result ul {
+    margin-top: 0;
+}
+
+.elasticsearch-result__metadata {
+    font-size: .9em;
 }
 
 /*Content*/

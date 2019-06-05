@@ -10,13 +10,10 @@ $partial_params = [
 ]; ?>
 
 <div class="elasticsearch-result">
-
-    <h3><a href="<?= $record_url ?>" title="<?= htmlspecialchars($title) ?>"><?= $title ?></a></h3>
-
-    <?= $this->partial('search/partials/results/letter.php', $partial_params) ?>
-
-    <div class="elasticsearch-result-footer">
-        <span title="Elasticsearch Score">Score: <?= $hit['_score'] ?></span>
+    <h3 class="elasticsearch-result__title">
+        <a href="<?= $record_url ?>" title="<?= htmlspecialchars($title) ?>"><?= $title ?></a>
+    </h3>
+    <div class="elasticsearch-result__metadata">
+        <?= $this->partial('search/partials/results/letter.php', $partial_params) ?>
     </div>
-
 </div>
