@@ -205,48 +205,11 @@ h1 {
 .element h3 {padding-top: 2%;
 }
 
-.element-text li:nth-child(1) {
-    display:none;
-}
-
-.element-text li:nth-child(3) {
-    display:none;
-}
-
-.element-text li:nth-child(4) {
-    display:none;
-}
-
-.element-text li:nth-child(5) {
-    display:none;
-}
 /* browse results*/
 
 .item h2 {
   font-size:18px;
 }
-
-/*
-#outputs a:nth-child(1) {
-    display:none;
-}
-
-#outputs a:nth-child(3) {
-    display:none;
-}
-
-#outputs a:nth-child(4) {
-    display:none;
-}
-
-#outputs a:nth-child(5) {
-    display:none;
-}
-
-#outputs a:nth-child(6) {
-    display:none;
-}
-*/
 
 /* footer */
 
