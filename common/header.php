@@ -66,7 +66,10 @@
 
             <?php echo theme_header_image(); ?>
 
-            <nav id="top-nav" class="navbar" role="navigation">
+
+<!-- DESKTOP NAV BAR STARTS HERE -->
+
+            <nav id="top-nav" class="navbar desktop-nav" role="navigation">
                 <?php echo public_nav_main(); ?>
                 <div id="search-container" role="search">
                     <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
@@ -77,6 +80,65 @@
                 </div>
             </nav>
 
+<!-- NAV ENDS -->
+
+
+<!-- HACKED MOBILE NAV STARTS HERE -->
+
+<div class="mobile-nav-hardcode">
+    <nav class="navbar navbar-default" role="navigation">
+
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed burg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <!--<span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>-->
+          </button>
+        </div>
+
+        <!-- MENU CONTENT HERE. UPDATE AS NEEDED. -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/items/browse">Browse Letters</a></li>
+                    <li><a href="/collections/browse">Browse by Collection</a></li>
+                  </ul>
+                </li>
+
+                <li><a href="/board">Scientific Board</a></li>
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Partners <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/team">Development Team</a></li>
+                  </ul>
+                </li>
+
+                <li><a href="/bibliography">Bibliography</a></li>
+                <li><a href="/collaborate">Collaborate</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+
+            <div id="search-container" role="search">
+                <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
+                <?php echo search_form(array('show_advanced' => false)); ?>
+                <?php else: ?>
+                <?php echo search_form(); ?>
+                <?php endif; ?>
+            </div>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+<!-- HACK ENDS HERE-->
 
         </header>
 

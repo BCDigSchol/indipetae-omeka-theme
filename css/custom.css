@@ -278,7 +278,7 @@ h1 {
     margin-right: 0;
     background-color: white;
     margin-left: 2%;
-    border-top: solid 5px #872334;
+    border-top: none;
   }
 
 #footer-container {
@@ -331,6 +331,7 @@ h1 {
   padding-top: 2%;
   color:#8a6b46;
 }
+
 
 /* Home page */
 
@@ -412,4 +413,61 @@ h2 .homepage_heading {
     letter-spacing:2px;
     padding:2%;
   }
+}
+
+/* 06/06/2019 EDITS */
+
+body {
+  min-width: 370px;
+}
+
+.desktop-nav {
+  display: inline-block;
+}
+
+.mobile-nav-hardcode {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+
+  .navbar-header {
+    background-color: transparent;
+    width: 100%;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-nav-hardcode {
+  display: inherit;
+  background-color: #69635f;
+  }
+
+  .navbar-header button.navbar-toggle {
+    width: 36px;
+    height: 36px;
+    margin: .2em 0;
+    float: right;
+  }
+
+  .mobile-nav-hardcode li a {
+    color: #fff;
+    font-size: 18px;
+    line-height: 35px;
+  }
+
+  .mobile-nav-hardcode .dropdown-menu {
+    background-color: rgba(255,255,255,.2);
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0rem;
+    padding: .5em 0 .5em 2.5em;
+  }
+
+  .burg {
+   background-image: url(https://indipetae.bc.edu/themes/minimalist/img/burg.png);
+    background-size: cover;
+  }
+
 }

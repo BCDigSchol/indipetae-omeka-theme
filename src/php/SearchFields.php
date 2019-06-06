@@ -4,9 +4,9 @@ namespace BCLib\Indipetae;
 
 const FIELD_TITLE = 'title';
 const FIELD_GRADE = 'grade';
-const FIELD_MODEL = 'model';
+const FIELD_MODEL = 'jmodel';
 const FIELD_LINKS = 'links';
-const FIELD_OTHER_NAMES = 'other_names';
+const FIELD_OTHER_NAMES = 'other_name';
 const FIELD_DESTINATIONS = 'destinations';
 const FIELD_LANGUAGE = 'Language';
 const FIELD_CALL_NUMBER = 'call_number';

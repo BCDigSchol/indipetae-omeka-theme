@@ -7,8 +7,8 @@
             <ul>
                 <li class="adv-select__opt adv-select__opt--sender" data-field="sender">Sender</li>
                 <li class="adv-select__opt adv-select__opt--recipient" data-field="recipient">Recipient</li>
-                <li class="adv-select__opt adv-select__opt--model" data-field="model">Models/Saints/Missionaries</li>
-                <li class="adv-select__opt adv-select__opt--other_names" data-field="other_names">Other persons mentioned</li>
+                <li class="adv-select__opt adv-select__opt--model" data-field="jmodel">Models/Saints/Missionaries</li>
+                <li class="adv-select__opt adv-select__opt--other_names" data-field="other_name">Other persons mentioned</li>
             </ul>
         </div>
     </div>
