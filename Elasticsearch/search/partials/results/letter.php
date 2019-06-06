@@ -20,8 +20,6 @@ $recipients_heading = count($elements['audience']) > 1 ? 'Recipients' : 'Recipie
 $destinations_heading = count($elements['publisher']) > 1 ? 'Destinations' : 'Destination';
 
 ?>
-<?php if ($result_img): ?><a href="<?= $url ?>"><?= $result_img ?></a><?php endif; ?>
-
 <ul>
     <?php if ($recipients): ?>
         <li title="recipient"><b><?= $recipients_heading ?>:</b> <?= $recipients ?></li>
