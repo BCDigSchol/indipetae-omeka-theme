@@ -34,14 +34,7 @@ const SEARCH_FIELDS = [
         'id' => '76',
         'dc_label' => 'Replaces',
         'controlled' => true,
-        'values' => [
-            'Coadjutor',
-            'Novice',
-            'Professed',
-            'Scholastic',
-            'Temporal Coadjutor',
-            'Undetermined'
-        ]
+        'values' => 'from_db'
     ],
     FIELD_MODEL => [
         'id' => '49',
@@ -120,11 +113,7 @@ const SEARCH_FIELDS = [
         'id' => '79',
         'dc_label' => 'Medium',
         'controlled' => true,
-        'values' => [
-            'Yes',
-            'No',
-            'To Be Determined'
-        ]
+        'values' => 'from_db'
     ],
     FIELD_NOTES => [
         'id' => '53',
@@ -142,11 +131,7 @@ const SEARCH_FIELDS = [
         'id' => '60',
         'dc_label' => 'Date Issued',
         'controlled' => true,
-        'values' => [
-            'Yes',
-            'No',
-            'Blank'
-        ]
+        'values' => 'from_db'
     ],
     FIELD_DOCUMENT_ID => [
         'id' => '78',
