@@ -41,7 +41,7 @@
         <div class="row">
             <section id="elasticsearch-sidebar" class="col-md-3">
                 <?= $this->partial('search/partials/aggregations.php',
-                    ['query' => $query, 'aggregations' => $results['aggregations']])
+                    ['query' => $query, 'aggregations' => $aggregations])
                 ?>
             </section>
 

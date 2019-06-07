@@ -1,3 +1,18 @@
 {
-  "presets": ["@babel/preset-env"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "targets": {
+          "chrome": "58",
+          "ie": "10"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "transform-es2015-template-literals",
+    "@babel/plugin-transform-spread"
+  ]
 }

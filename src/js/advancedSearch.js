@@ -32,20 +32,31 @@ const grayedOutClass = 'adv-select__opt--grayed-out';
  */
 function handleSubmit(event) {
 
+    console.log('before prevent');
+
     // Don't submit form.
     event.preventDefault();
 
+    console.log('after prevent');
+
+
     // Build query string by extracting result from all non-empty input fields.
-    const text_inputs = [...document.querySelectorAll('#indipetae-advanced-search-form .advanced-search-field__input')];
-    const selects = [...document.querySelectorAll('#indipetae-advanced-search-form .advanced-search-field__select')];
+    const text_inputs = Array.prototype.slice.call(document.querySelectorAll('#indipetae-advanced-search-form .advanced-search-field__input'));
+    const selects = Array.prototype.slice.call(document.querySelectorAll('#indipetae-advanced-search-form .advanced-search-field__select'));
     const simpleInputs = text_inputs.concat(selects);
 
+    console.log('after spread');
+
     const queryArray = [];
-    for (let input of simpleInputs) {
-        if (input.value) {
-            queryArray.push(`${input.name}=${input.value}`);
-        }
-    }
+
+    console.log('after const');
+
+    simpleInputs.forEach(function(parsedInput) {
+        queryArray.push(parsedInput.name + "=" + parsedInput.value);
+    });
+
+    console.log('after pushing');
+
 
     // Build year range inpu
     let yearMin = document.querySelector('#indipetae-advanced-search-form #date_min');
@@ -56,7 +67,13 @@ function handleSubmit(event) {
         queryArray.push(`year=${yearMin}-${yearMax}`);
     }
 
+    console.log('after year');
+
+
     const queryString = queryArray.join('&');
+
+    console.log('after join');
+
 
     // Redirect page to the search URL.
     window.location = form.action + `?${queryString}`;
@@ -83,11 +100,30 @@ function addField(event) {
     const field = event.target.dataset.field;
     if (!addedFields.has(field)) {
         const template = document.querySelector(`#adv-search__${field}_template`);
-        const clone = document.importNode(template.content, true);
-        addedFields.add(field);
+        let clone;
+
+        if (template.content) {
+            clone = template.content.cloneNode(true);
+            addedFields.add(field);
+
+        } else {
+            clone = createElement(template.innerHTML);
+        }
         appliedFields.appendChild(clone);
         grayOut(event.target);
     }
+}
+
+function createElement(str) {
+    var frag = document.createDocumentFragment();
+
+    var elem = document.createElement('div');
+    elem.innerHTML = str;
+
+    while (elem.childNodes[0]) {
+        frag.appendChild(elem.childNodes[0]);
+    }
+    return frag;
 }
 
 function grayOut(element) {

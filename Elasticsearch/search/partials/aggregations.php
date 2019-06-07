@@ -37,5 +37,8 @@ $url_without_facets = get_view()->url('/elasticsearch') . '?q=' . urlencode($que
                     </li>
                 <?php endforeach; ?>
             </ul>
+    <?php if (count($facet->buckets) > 10): ?>
+        <a href="<?= $facet->url ?>">MORE</a>
+    <?php endif; ?>
     <?php endforeach; ?>
 </div>
