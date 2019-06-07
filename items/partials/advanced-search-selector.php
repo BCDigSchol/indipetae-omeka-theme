@@ -52,7 +52,7 @@
                 <li class="adv-select__opt adv-select__opt--grade" data-field="grade">Grade S.J.</li>
                 <li class="adv-select__opt adv-select__opt--anterior-desire" data-field="anterior_desire">Anterior Desire</li>
                 <li class="adv-select__opt adv-select__opt--left" data-field="left_for_mission">Left for Mission Lands?</li>
-                <li class="adv-select__opt adv-select__opt--collection" data-field="collection">Collection</li>
+                <!--<li class="adv-select__opt adv-select__opt--collection" data-field="collection">Collection</li>-->
             </ul>
         </div>
     </div>

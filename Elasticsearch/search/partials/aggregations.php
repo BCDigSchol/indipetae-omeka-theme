@@ -2,6 +2,12 @@
 $aggregation_labels = Elasticsearch_Helper_Aggregations::getAggregationLabels();
 $applied_facets = Elasticsearch_Helper_Aggregations::getAppliedFacets();
 $result_facets = Elasticsearch_Helper_Aggregations::getResultFacets($aggregations);
+
+// @todo enable archive facet when there are multiple archives
+$result_facets = array_filter($result_facets, function (Elasticsearch_Model_Facet $facet) {
+    return $facet->name !== 'archive';
+});
+
 $url_without_facets = get_view()->url('/elasticsearch') . '?q=' . urlencode($query['q']);
 ?>
 
