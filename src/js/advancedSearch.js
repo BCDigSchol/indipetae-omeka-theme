@@ -36,19 +36,26 @@ function handleSubmit(event) {
     event.preventDefault();
 
     // Build query string by extracting result from all non-empty input fields.
-    const inputClassNames = 'advanced-search-field__input advanced-search-field__select';
-    const pp = [...document.getElementsByClassName(inputClassNames)];
-
-    const text_inputs = [...document.getElementsByClassName('advanced-search-field__input')];
-    const selects = [...document.getElementsByClassName('advanced-search-field__select')];
-    const allInputs = text_inputs.concat(selects);
+    const text_inputs = [...document.querySelectorAll('#indipetae-advanced-search-form .advanced-search-field__input')];
+    const selects = [...document.querySelectorAll('#indipetae-advanced-search-form .advanced-search-field__select')];
+    const simpleInputs = text_inputs.concat(selects);
 
     const queryArray = [];
-    for (let input of allInputs) {
+    for (let input of simpleInputs) {
         if (input.value) {
             queryArray.push(`${input.name}=${input.value}`);
         }
     }
+
+    // Build year range inpu
+    let yearMin = document.querySelector('#indipetae-advanced-search-form #date_min');
+    let yearMax = document.querySelector('#indipetae-advanced-search-form #date_max');
+    if (yearMin || yearMax) {
+        yearMin = yearMin ? parseInt(yearMin.value) : '_';
+        yearMax = yearMax ? parseInt(yearMax.value) : '_';
+        queryArray.push(`year=${yearMin}-${yearMax}`);
+    }
+
     const queryString = queryArray.join('&');
 
     // Redirect page to the search URL.

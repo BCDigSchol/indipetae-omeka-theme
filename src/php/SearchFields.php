@@ -27,7 +27,8 @@ const SEARCH_FIELDS = [
     FIELD_TITLE => [
         'id' => '50',
         'dc_label' => 'Title',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false,
     ],
     FIELD_GRADE => [
         'id' => '76',
@@ -45,17 +46,20 @@ const SEARCH_FIELDS = [
     FIELD_MODEL => [
         'id' => '49',
         'dc_label' => 'Subject',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
     ],
     FIELD_LINKS => [
         'id' => '48',
         'dc_label' => 'Source',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
     ],
     FIELD_OTHER_NAMES => [
         'id' => '46',
         'dc_label' => 'Relation',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
 
     ],
     FIELD_DESTINATIONS => [
@@ -67,42 +71,50 @@ const SEARCH_FIELDS = [
     FIELD_LANGUAGE => [
         'id' => '44',
         'dc_label' => 'Language',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
     ],
     FIELD_CALL_NUMBER => [
         'id' => '43',
         'dc_label' => 'Identifier',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
     ],
     FIELD_RECIPIENT => [
         'id' => '86',
         'dc_label' => 'Audience',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
     ],
     FIELD_TRANSCRIPTION => [
         'id' => '41',
         'dc_label' => 'Description',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
     ],
     FIELD_DATE => [
         'id' => '40',
-        'dc_label' => 'Date',
-        'controlled' => false
+        'dc_label' => 'Year',
+        'controlled' => false,
+        'range' => true
     ],
     FIELD_SENDER => [
         'id' => '39',
         'dc_label' => 'Creator',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
     ],
     FIELD_FROM => [
         'id' => '38',
         'dc_label' => 'Coverage',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
     ],
     FIELD_TRANSCRIBED_BY => [
         'id' => '37',
         'dc_label' => 'Contributor',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
     ],
     FIELD_ANTERIOR_DESIRE => [
         'id' => '79',
@@ -117,7 +129,8 @@ const SEARCH_FIELDS = [
     FIELD_NOTES => [
         'id' => '53',
         'dc_label' => 'Abstract',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
     ],
     FIELD_TO => [
         'id' => '81',
@@ -138,7 +151,8 @@ const SEARCH_FIELDS = [
     FIELD_DOCUMENT_ID => [
         'id' => '78',
         'dc_label' => 'Extent',
-        'controlled' => false
+        'controlled' => false,
+        'range' => false
     ],
     FIELD_ARCHIVE => [
         'id' => '111111',

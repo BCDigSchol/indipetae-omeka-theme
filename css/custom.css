@@ -96,9 +96,18 @@ body {
 .advanced-search-field__label {
     margin: 0;
     display: block;
+    font-weight: bold;
 }
 .advanced-search-field__input[type="text"] {
     width: 70%;
+}
+
+.advanced-search-field__range-inputs {
+    display: inline;
+}
+
+.advanced-search-field__input[type="text"].advanced-search-field__input--range {
+    width: 6em;
 }
 
 .advanced-search-field__select {

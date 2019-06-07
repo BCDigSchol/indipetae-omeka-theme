@@ -36,7 +36,7 @@
         </button>
         <div class="dropdown-menu adv-select__opts">
             <ul>
-                <li class="adv-select__opt adv-select__opt--date" data-field="date">Date</li>
+                <li class="adv-select__opt adv-select__opt--date" data-field="date">Year</li>
             </ul>
         </div>
     </div>

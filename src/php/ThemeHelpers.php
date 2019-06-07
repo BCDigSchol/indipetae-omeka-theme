@@ -98,6 +98,8 @@ class ThemeHelpers
 
         if ($field['controlled']) {
             $input_tag = self::advSearchSelect($field, $field_name);
+        } elseif ($field['range']) {
+            $input_tag = self::advSearchRange($field, $field_name);
         } else {
             $input_tag = self::advSearchTextInput($field, $field_name);
         }
@@ -162,6 +164,21 @@ TAG;
 <select class="advanced-search-field__select" type="text" id="$field_name" name="$field_name">
         $options_tags
 </select>
+TAG;
+    }
+
+    private static function advSearchRange(array $field, string $field_name): string
+    {
+        $min_field_name = "{$field_name}_min";
+        $max_field_name = "{$field_name}_max";
+
+        return <<<TAG
+        <div class="advanced-search-field__range-inputs">
+<label for="$inn_field_name" class="advanced-search-field__range-label" data-point="min" data-field="$field_name">Minimum</label>
+<input class="advanced-search-field__input--range" type="text" id="$min_field_name" name="$min_field_name" />
+<label for="$max_field_name" class="advanced-search-field__range-label" data-point="max" data-field="$field_name">Maximum</label>
+<input class="advanced-search-field__input--range" type="text" id="$max_field_name" name="$max_field_name" />
+</div>
 TAG;
     }
 
