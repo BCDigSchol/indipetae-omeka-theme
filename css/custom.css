@@ -1,5 +1,6 @@
 .header {
   padding: 0px;
+  overflow-x: hidden;
 }
 
 .row {
@@ -19,6 +20,11 @@ body {
   display: flex;
   justify-content: center;
 }
+
+h1 {
+  text-transform: capitalize;
+}
+
 
 /*Advanced Search*/
 .search-groups {
@@ -115,7 +121,7 @@ body {
 }
 
 legend {
-    padding:1%;
+  padding:1%;
 }
 
 #indipetae-advanced-search-form__reset-button, input#indipetae-advanced-search-form__submit-button {
@@ -204,9 +210,7 @@ legend {
 .banner-link a{
   color:white;
   text-decoration: none;
-  letter-spacing: 2%;
 }
-
 
 .show .element {
 border: none;
@@ -226,8 +230,13 @@ h3 {
 }
 
 .element-text a{
-  color: #007bff;
+  /*color: #007bff;*/
+  color: #0056B3;
 }
+
+.element-hide {
+    display: none !important;
+  }
 
 #content {
   padding-left:100px;
@@ -252,25 +261,6 @@ h3 {
   background-color:white;
 }
 
-/* Item page*/
-#transcription .element h3{
-  padding:0px;
-}
-
-.transcription-heading {
-  padding-top:2.5%;
-}
-
-h1 {
-  text-transform: none;
-}
-
-.element-hide {
-    display: none;
-  }
-
-.element h3 {padding-top: 2%;
-}
 
 /* browse results*/
 
@@ -283,11 +273,8 @@ h1 {
   footer {
     width: 100%;
     float: left;
-    margin-right: 5.26316%;
-    margin-right: 0;
     background-color: white;
-    margin-left: 2%;
-    border-top: none;
+    margin: 0;
   }
 
 #footer-container {
@@ -304,35 +291,23 @@ h1 {
     flex-wrap:wrap-reverse;
     }
 
-    .footer-title {
-      font-size: 18px;
-      font-weight: bold;
+.footer-title {
+  font-size: 18px;
+  font-weight: bold;
+}
 
-    }
-
-.site-links {
+footer .site-links {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   list-style-type: none;
-  padding-top: 5%;
+  padding: .75em 0;
+  margin: 0;
 }
 
 .site-links li a{
   color: #872334;
   text-decoration: underline;
-}
-
-.footer-logo {
-  width: 200px;
-  padding-right: 5%;
-
-}
-
-.footer-text {
-  margin-left:3%;
-  width:75%;
-  float:right;
 }
 
 .copyright {
@@ -438,6 +413,12 @@ body {
   display: none;
 }
 
+.footer-logo {
+  width: 200px;
+  padding-right: 5%;
+
+}
+
 @media screen and (max-width: 767px) {
 
   .navbar-header {
@@ -455,16 +436,19 @@ body {
   }
 
   .navbar-header button.navbar-toggle {
-    width: 36px;
-    height: 36px;
+    width: 55px;
+    height: 25px;
     margin: .2em 0;
     float: right;
+    border-radius: 5px;
+    outline: none;
   }
 
   .mobile-nav-hardcode li a {
     color: #fff;
     font-size: 18px;
     line-height: 35px;
+    text-decoration: none !important;
   }
 
   .mobile-nav-hardcode .dropdown-menu {
@@ -475,8 +459,122 @@ body {
   }
 
   .burg {
-   background-image: url(https://indipetae.bc.edu/themes/minimalist/img/burg.png);
-    background-size: cover;
+    background-image: url(https://indipetae.bc.edu/themes/minimalist/img/burg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
   }
 
+  .footer-logo {
+    width: 50%;
+    padding-right: 0;
+    margin: 0 auto 1em;
+    display: block;
+  }
+}
+
+/* Founding Partners Styles */
+
+#founding {
+  border-top: solid 5px #872334;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#proj-updates {
+  background-color: rgb(135, 35, 52, 0.1);
+  padding: 0 3% 3%;
+}
+
+#founding h2, #proj-updates h2 {
+  color: #872334;
+  text-align: center;
+}
+
+#founding img {
+  width: 250px;
+  min-width: 75px;
+}
+
+@media screen and (max-width: 767px) {
+  #founding img {
+    width: 75%;
+    margin: 0 0 1em 0;
+  }
+}
+
+/* ITEM RECORD STYLES */
+
+#item_wrap {
+  position: relative;
+}
+
+#item_wrap h3 {
+  padding: 0;
+}
+
+#item_wrap .element {
+  margin-bottom: .75em;
+}
+
+#transcription .element h3 {
+  padding: 0px;
+}
+
+.transcript_text {
+  padding: 1.5em;
+  margin-top: .5em;
+  margin-bottom: 2em;
+  background-color: lightgrey;
+}
+
+#item_wrap .item-pagination {
+    width: 100%;
+    text-align: center;
+    overflow: inherit;
+    background-color: white;
+}
+
+#item_wrap .navigation li {
+    display: inline-block;
+    width: 15%;
+}
+
+@media screen and (max-width: 767px) {
+
+  #item_wrap .navigation li {
+    display: inline-block;
+    width: 55%;
+  }
+
+  #item_wrap .element-set {
+      text-align: center;
+      border-bottom: 3px double #ddd ;
+  }
+
+  #item_wrap .element-set .element {
+      margin: 0 1em 2em;
+      display: inline-block;
+  }
+
+  #item_wrap .element-set .element h3 {
+      line-height: 2;
+  }
+
+  #item_wrap h3 {
+    text-align: center;
+  }
+
+  #itemfiles {
+    text-align: center;
+    border-bottom: 3px double #ddd ;
+  }
+
+  #item-output-formats {
+    text-align: center;
+  }
+
+  #item-output-formats #output-format-list {
+    list-style: none;
+  }
 }
