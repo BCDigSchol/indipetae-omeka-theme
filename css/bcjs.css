@@ -207,7 +207,6 @@
 
   body .header a {
     text-transform: uppercase;
-    /*TODO: Change Font Size to be based off of percentages*/
   }
 
   .nav-bcjs a {
@@ -230,6 +229,7 @@
   .brand-backgnd {
     background: #bc9b6a;
     position: relative;
+    margin: 0 !important;
   }
   .navbar-header{
     background-color: #bc9b6a;
