@@ -45,13 +45,15 @@ h1 {
 }
 
 .adv-select__opt:hover {
-    filter: brightness(155%);
+  color: #872334;
+  text-decoration: underline;
 }
 
+/*
 .adv-select__opt--grayed-out {
     cursor: initial;
     color: #b3b4b2;
-}
+}*/
 
 .adv-select__opt--grayed-out:hover {
     filter: none;
@@ -577,4 +579,11 @@ body {
   #item-output-formats #output-format-list {
     list-style: none;
   }
+}
+
+/* MORE CUSTOM */
+
+.adv-select__opts {
+  box-shadow: 0 0 0 .2rem rgba(130,138,145,.5);
+  padding: 10px;
 }
