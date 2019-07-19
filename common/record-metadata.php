@@ -14,8 +14,12 @@ if(isset($elementsForDisplay['Item Type Metadata'])) {
 //$wantedElements ['Transcription (back)'] = $elementsForDisplay['Dublin Core'] ['Extent'];//
 $wantedElements ['Sender'] = $elementsForDisplay ['Dublin Core'] ['Creator'];
 $wantedElements ['Grade S.J.'] = $elementsForDisplay ['Dublin Core'] ['Replaces'];
-$wantedElements ['Date'] = $elementsForDisplay ['Dublin Core'] ['Date'];
-$wantedElements ['From'] = $elementsForDisplay ['Dublin Core'] ['Coverage'];
+$wantedElements ['Year'] = $elementsForDisplay ['Dublin Core'] ['Date'];
+$wantedElements ['Month'] = $elementsForDisplay ['Dublin Core'] ['Temporal Coverage'];
+//$wantedElements ['Date'] = $elementsForDisplay ['Dublin Core'] ['Date Submitted'];//
+$wantedElements ['Day'] = $elementsForDisplay ['Dublin Core'] ['References'];
+$wantedElements ['From (City)'] = $elementsForDisplay ['Dublin Core'] ['Coverage'];
+$wantedElements ['From (Institution)'] = $elementsForDisplay ['Dublin Core'] ['Is Part Of'];
 $wantedElements ['To'] = $elementsForDisplay ['Dublin Core'] ['Spatial Coverage'];
 $wantedElements ['Recipient'] = $elementsForDisplay ['Dublin Core'] ['Audience'];
 $wantedElements ['Anterior desire'] = $elementsForDisplay ['Dublin Core'] ['Medium'];
@@ -26,7 +30,10 @@ $wantedElements ['Left for mission lands'] = $elementsForDisplay ['Dublin Core']
 $wantedElements ['Language of the Letter'] = $elementsForDisplay ['Dublin Core'] ['Language'];
 $wantedElements ['Links'] = $elementsForDisplay ['Dublin Core'] ['Source'];
 $wantedElements ['Notes'] = $elementsForDisplay ['Dublin Core'] ['Abstract'];
-$wantedElements ['Call Number'] = $elementsForDisplay ['Dublin Core'] ['Identifier'];
+$wantedElements ['Archive'] = $elementsForDisplay ['Dublin Core'] ['Identifier'];
+$wantedElements ['Collection'] = $elementsForDisplay ['Dublin Core'] ['Has Format'];
+$wantedElements ['Sub-collection'] = $elementsForDisplay ['Dublin Core'] ['Has Part'];
+$wantedElements ['Number'] = $elementsForDisplay ['Dublin Core'] ['Has Version'];
 //$wantedElements ['Contributor'] = $elementsForDisplay ['Dublin Core'] ['Contributor'];//
 ?>
 
