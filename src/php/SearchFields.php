@@ -52,6 +52,7 @@ const METADATA_FIELDS = [
         'label' => 'Sender',
         'dc_label' => 'Creator',
         'search_field' => true,
+        'has_facet' => true
     ],
     FIELD_GRADE => [
         'id' => '76',
@@ -59,7 +60,8 @@ const METADATA_FIELDS = [
         'dc_label' => 'Replaces',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true
+        'load_from_db' => true,
+        'has_facet' => true
     ],
     FIELD_DATE => [
         'id' => '59',
@@ -73,6 +75,7 @@ const METADATA_FIELDS = [
         'label' => 'From (City)',
         'dc_label' => 'Coverage',
         'search_field' => true,
+        'has_facet' => true
     ],
     FIELD_FROM_INSTITUTION => [
         'id' => '70',
@@ -80,7 +83,8 @@ const METADATA_FIELDS = [
         'dc_label' => 'Is Part Of',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true
+        'load_from_db' => true,
+        'has_facet' => true
     ],
     FIELD_TO => [
         'id' => '81',
@@ -88,7 +92,8 @@ const METADATA_FIELDS = [
         'dc_label' => 'Spatial Coverage',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true
+        'load_from_db' => true,
+        'has_facet' => true
     ],
     FIELD_RECIPIENT => [
         'id' => '86',
@@ -96,7 +101,8 @@ const METADATA_FIELDS = [
         'dc_label' => 'Audience',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true
+        'load_from_db' => true,
+        'has_facet' => true
     ],
     FIELD_ANTERIOR_DESIRE => [
         'id' => '79',
@@ -104,7 +110,7 @@ const METADATA_FIELDS = [
         'dc_label' => 'Medium',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true
+        'load_from_db' => true,
     ],
     FIELD_DESTINATIONS => [
         'id' => '45',
@@ -112,13 +118,15 @@ const METADATA_FIELDS = [
         'dc_label' => 'Publisher',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true
+        'load_from_db' => true,
+        'has_facet' => true
     ],
     FIELD_MODEL => [
         'id' => '49',
         'label' => 'Models/Saints/Missionaries',
         'dc_label' => 'Subject',
         'search_field' => true,
+        'has_facet' => true
     ],
     FIELD_OTHER_NAMES => [
         'id' => '46',
@@ -126,8 +134,8 @@ const METADATA_FIELDS = [
         'dc_label' => 'Relation',
         'search_field' => true,
         'controlled' => false,
-        'range' => false
-
+        'range' => false,
+        'has_facet' => true
     ],
     FIELD_LEFT_FOR_MISSION => [
         'id' => '60',
@@ -135,7 +143,7 @@ const METADATA_FIELDS = [
         'dc_label' => 'Date Issued',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true
+        'load_from_db' => true,
     ],
     FIELD_LANGUAGE => [
         'id' => '44',
@@ -148,6 +156,7 @@ const METADATA_FIELDS = [
         'label' => 'Links',
         'dc_label' => 'Source',
         'search_field' => true,
+        'has_facet' => true
     ],
     FIELD_NOTES => [
         'id' => '53',

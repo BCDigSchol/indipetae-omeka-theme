@@ -10,6 +10,7 @@ class SearchField extends MetadataField
     public $load_from_db = false;
     public $values;
     public $search_key;
+    public $has_facet = false;
 
     public function __construct(array $config)
     {
@@ -20,11 +21,12 @@ class SearchField extends MetadataField
         $this->values = $config['values'] ?? $this->values;
         $this->search_key = $config['search_key'];
         $this->is_linked = $this->label !== 'Call Number';
+        $this->has_facet = $config['has_facet'] ?? $this->has_facet;
     }
 
     public function getSearchLink($value)
     {
-        $text_value = html_escape($value);
-        return "/elasticsearch/search?{$this->search_key}=$text_value";
+        $key = $this->has_facet ? "facet_{$this->search_key}" : $this->search_key;
+        return "/elasticsearch/search?$key=$value";
     }
 }
