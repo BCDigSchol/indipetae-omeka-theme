@@ -22,6 +22,8 @@ const FIELD_TO = 'to';
 const FIELD_LEFT_FOR_MISSION = 'left_for_mission';
 const FIELD_DOCUMENT_ID = 'document_id';
 const FIELD_ARCHIVE = 'collection';
+const FIELD_MONTH_DAY = 'month_day';
+const FIELD_FROM_INSTITUTION = 'from_institution';
 
 const SEARCH_FIELDS = [
     FIELD_TITLE => [
@@ -76,8 +78,8 @@ const SEARCH_FIELDS = [
     FIELD_RECIPIENT => [
         'id' => '86',
         'dc_label' => 'Audience',
-        'controlled' => false,
-        'range' => false
+        'controlled' => true,
+        'values' => 'from_db'
     ],
     FIELD_TRANSCRIPTION => [
         'id' => '41',
@@ -144,5 +146,16 @@ const SEARCH_FIELDS = [
         'dc_label' => 'Collection',
         'controlled' => true,
         'values' => ['New Society (1814-1939']
+    ],
+    FIELD_MONTH_DAY => [
+        'id' => '82',
+        'dc_label' => 'Temporal Coverage',
+        'controlled' => false
+    ],
+    FIELD_FROM_INSTITUTION => [
+        'id' => '',
+        'dc_label' => '',
+        'controlled' => true,
+        'values' => 'from_db'
     ]
 ];
