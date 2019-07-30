@@ -48,11 +48,6 @@
         if(allimg && allimg.length < 2){
            jQuery(".chocolat-right, .chocolat-left").hide()
         }
-
-        jQuery(".element-set .element:not(:has(>.element-text))").each(function() {
-            jQuery(this).addClass("element-hide")
-        })
-       
     });
   </script>
 

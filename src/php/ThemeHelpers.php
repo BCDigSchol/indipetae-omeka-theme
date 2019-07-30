@@ -2,6 +2,8 @@
 
 namespace BCLib\Indipetae;
 
+use function JmesPath\search;
+
 require_once __DIR__ . '/SearchFields.php';
 
 class ThemeHelpers
@@ -91,20 +93,22 @@ class ThemeHelpers
 
     public static function advSearchInput(string $field_name): string
     {
-        if (!isset(SEARCH_FIELDS[$field_name])) {
-            throw new \InvalidArgumentException("$field_name is not a search field name");
-        }
-        $field = SEARCH_FIELDS[$field_name];
+        $fields = MetadataMap::getMap();
 
-        if ($field['controlled']) {
+        /**
+         * @var SearchField $field
+         */
+        $field = $fields->getField($field_name);
+
+        if ($field->is_controlled) {
             $input_tag = self::advSearchSelect($field, $field_name);
-        } elseif ($field['range']) {
+        } elseif ($field->is_range) {
             $input_tag = self::advSearchRange($field, $field_name);
         } else {
             $input_tag = self::advSearchTextInput($field, $field_name);
         }
 
-        $field_label = __($field['dc_label']);
+        $field_label = __($field->dublin_core_label);
 
         return <<<HTML
 <template id="adv-search__{$field_name}_template" style="display: none">
@@ -121,6 +125,25 @@ class ThemeHelpers
 HTML;
     }
 
+    /**
+     * @param array $wanted_elements
+     * @param array $dublin_core_metadata
+     * @return MetadataField[]
+     */
+    public static function elementsToDisplay(array $wanted_elements, array $dublin_core_metadata)
+    {
+        $display_elements = [];
+        $metadata_fields = \BCLib\Indipetae\MetadataMap::getMap();
+        foreach ($wanted_elements as $element) {
+            $field = $metadata_fields->getField($element);
+            if (isset($dublin_core_metadata[$field->dublin_core_label])) {
+                $field->setValue($dublin_core_metadata);
+                $display_elements[] = $field;
+            }
+        }
+        return $display_elements;
+    }
+
 
     /**
      * Build the list to build the field search selector
@@ -130,29 +153,24 @@ HTML;
     private static function fieldSearchSelectorList(): array
     {
         $response = ['' => 'Select Below'];
-        foreach (SEARCH_FIELDS as $field) {
+        foreach (METADATA_FIELDS as $field) {
             $response[$field['id']] = __($field['dc_label']);
         }
         return $response;
     }
 
-    /**
-     * @param string $field_name
-     * @param $field_id
-     * @return string
-     */
-    private static function advSearchTextInput(array $field, string $field_name): string
+    private static function advSearchTextInput(SearchField $field, string $field_name): string
     {
         return <<<TAG
 <input class="advanced-search-field__input" type="text" id="$field_name" name="$field_name" />
 TAG;
     }
 
-    private static function advSearchSelect(array $field, string $field_name): string
+    private static function advSearchSelect(SearchField $field, string $field_name): string
     {
-        $field_id = $field['id'];
+        $field_id = $field->field_id;
 
-        $values = ($field['values'] === 'from_db') ? self::getElementTextListFromDB($field_id) : $field['values'];
+        $values = $field->load_from_db ? self::getElementTextListFromDB($field_id) : $field->values;
 
         $options = array_map(self::class . '::selectOption', $values);
 

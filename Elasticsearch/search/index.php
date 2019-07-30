@@ -5,6 +5,8 @@
 
 <?php $totalResults = isset($results['hits']['total']) ? $results['hits']['total'] . ' ' . __('results') : null; ?>
 
+<?php $facets = $query['facets'] ?? [] ?>
+
 <div class="container">
 
     <h1><?= __('Search') . " ($totalResults)" ?></h1>
@@ -13,7 +15,7 @@
         <form id="elasticsearch-search-form">
             <input type="text" title="<?= __('Search keywords') ?>" name="q" value="<?= htmlspecialchars(array_key_exists('q',
                 $_GET) ? $_GET['q'] : '', ENT_QUOTES) ?>"/>
-            <?php foreach ($query['facets'] as $facet_name => $facet_values): ?>
+            <?php foreach ($facets as $facet_name => $facet_values): ?>
                 <?php if (is_array($facet_values)): ?>
                     <?php foreach ($facet_values as $facet_value): ?>
                         <input type="hidden" name="<?= "facet_{$facet_name}[]" ?>" value="<?= $facet_value ?>">

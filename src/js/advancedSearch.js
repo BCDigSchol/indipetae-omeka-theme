@@ -51,12 +51,11 @@ function handleSubmit(event) {
 
     console.log('after const');
 
-    simpleInputs.forEach(function(parsedInput) {
-        queryArray.push(parsedInput.name + "=" + parsedInput.value);
+    simpleInputs.forEach(function (parsedInput) {
+        if (parsedInput.value) {
+            queryArray.push(parsedInput.name + "=" + parsedInput.value);
+        }
     });
-
-    console.log('after pushing');
-
 
     // Build year range inpu
     let yearMin = document.querySelector('#indipetae-advanced-search-form #date_min');
@@ -74,9 +73,11 @@ function handleSubmit(event) {
 
     console.log('after join');
 
+    console.log(form.action + `?${queryString}`);
 
     // Redirect page to the search URL.
     window.location = form.action + `?${queryString}`;
+
 }
 
 /**
