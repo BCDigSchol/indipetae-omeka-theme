@@ -46,7 +46,11 @@ use BCLib\Indipetae\ThemeHelpers;
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DESTINATIONS) ?>
 
-<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DATE) ?>
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_YEAR) ?>
+
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_MONTH) ?>
+
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DAY) ?>
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_GRADE) ?>
 
@@ -54,7 +58,17 @@ use BCLib\Indipetae\ThemeHelpers;
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_LEFT_FOR_MISSION) ?>
 
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_LANGUAGE) ?>
+
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_ARCHIVE) ?>
+
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_CALL_NUMBER) ?>
+
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_FOLDER) ?>
+
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_NUMBER) ?>
+
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_CONTRIBUTOR) ?>
 
 <?= js_tag('indipetae.bundle') ?>
 <script>
