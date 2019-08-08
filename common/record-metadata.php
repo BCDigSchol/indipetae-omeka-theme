@@ -10,7 +10,9 @@
     $wanted = [
         \BCLib\Indipetae\FIELD_SENDER,
         \BCLib\Indipetae\FIELD_GRADE,
-        \BCLib\Indipetae\FIELD_DATE,
+        \BCLib\Indipetae\FIELD_YEAR,
+        \BCLib\Indipetae\FIELD_MONTH,
+        \BCLib\Indipetae\FIELD_DAY,
         \BCLib\Indipetae\FIELD_FROM,
         \BCLib\Indipetae\FIELD_FROM_INSTITUTION,
         \BCLib\Indipetae\FIELD_TO,
@@ -24,6 +26,9 @@
         \BCLib\Indipetae\FIELD_LINKS,
         \BCLib\Indipetae\FIELD_NOTES,
         \BCLib\Indipetae\FIELD_CALL_NUMBER,
+        \BCLib\Indipetae\FIELD_ARCHIVE,
+        \BCLib\Indipetae\FIELD_FOLDER,
+        \BCLib\Indipetae\FIELD_NUMBER,
     ];
 
     $display_elements = \BCLib\Indipetae\ThemeHelpers::elementsToDisplay($wanted, $elementsForDisplay['Dublin Core']);
