@@ -13,7 +13,7 @@ const FIELD_CALL_NUMBER = 'call_number';
 const FIELD_RECIPIENT = 'recipient';
 const FIELD_TRANSCRIPTION = 'transcription';
 const FIELD_TRANSCRIPTION_BACK = 'transcription_back';
-const FIELD_DATE = 'date';
+const FIELD_DATE = 'date submitted';
 const FIELD_SENDER = 'sender';
 const FIELD_FROM = 'from';
 const FIELD_CONTRIBUTOR = 'contributor';
@@ -23,7 +23,11 @@ const FIELD_TO = 'to';
 const FIELD_LEFT_FOR_MISSION = 'left_for_mission';
 const FIELD_DOCUMENT_ID = 'document_id';
 const FIELD_ARCHIVE = 'collection';
-const FIELD_MONTH_DAY = 'month_day';
+const FIELD_FOLDER= 'folder';
+const FIELD_NUMBER = 'number';
+const FIELD_YEAR = 'year';
+const FIELD_MONTH = 'month';
+const FIELD_DAY = 'day';
 const FIELD_FROM_INSTITUTION = 'from_institution';
 
 const METADATA_FIELDS = [
@@ -70,6 +74,32 @@ const METADATA_FIELDS = [
         'search_field' => true,
         'range' => true
     ],
+
+    FIELD_YEAR => [
+        'id' => '40',
+        'label' => 'Year',
+        'dc_label' => 'Date',
+        'search_field' => true,
+        'range'=> true,
+    ],
+
+    FIELD_MONTH => [
+        'id' => '82',
+        'label' => 'Month',
+        'dc_label' => 'Temporal Coverage',
+        'search_field' => true,
+        'controlled' => true,
+        'load_from_db' => true
+    ],
+
+    FIELD_DAY => [
+        'id' => '75',
+        'label' => 'Day',
+        'dc_label' => 'References',
+        'search_field' => true,
+        'controlled' => false
+    ],
+
     FIELD_FROM => [
         'id' => '38',
         'label' => 'From (City)',
@@ -126,6 +156,8 @@ const METADATA_FIELDS = [
         'label' => 'Models/Saints/Missionaries',
         'dc_label' => 'Subject',
         'search_field' => true,
+        'controlled' => true,
+        'load_from_db' => true,
         'has_facet' => true
     ],
     FIELD_OTHER_NAMES => [
@@ -133,8 +165,8 @@ const METADATA_FIELDS = [
         'label' => 'Other Names',
         'dc_label' => 'Relation',
         'search_field' => true,
-        'controlled' => false,
-        'range' => false,
+        'controlled' => true,
+        'load_from_db' => true,
         'has_facet' => true
     ],
     FIELD_LEFT_FOR_MISSION => [
@@ -150,6 +182,8 @@ const METADATA_FIELDS = [
         'label' => 'Language of the Letter',
         'dc_label' => 'Language',
         'search_field' => true,
+        'controlled' => true,
+        'load_from_db' => true,
     ],
     FIELD_LINKS => [
         'id' => '48',
@@ -166,19 +200,29 @@ const METADATA_FIELDS = [
     ],
     FIELD_CALL_NUMBER => [
         'id' => '43',
-        'label' => 'Call Number',
+        'label' => 'Archive',
         'dc_label' => 'Identifier',
         'search_field' => true,
-        'controlled' => false,
-        'range' => false
+    ],
+    FIELD_FOLDER => [
+        'id' => '66',
+        'label' => 'Folder',
+        'dc_label' => 'Has Format',
+        'search_field' => true,
+    ],
+    FIELD_NUMBER => [
+        'id' => '68',
+        'label' => 'Number',
+        'dc_label' => 'Has Version',
+        'search_field' => true,
     ],
     FIELD_CONTRIBUTOR => [
         'id' => '37',
         'label' => 'Contributor',
         'dc_label' => 'Contributor',
         'search_field' => true,
-        'controlled' => false,
-        'range' => false
+        'controlled' => true,
+        'load_from_db' => true,
     ],
     FIELD_ARCHIVE => [
         'id' => '111111',
