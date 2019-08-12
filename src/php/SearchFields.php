@@ -203,12 +203,16 @@ const METADATA_FIELDS = [
         'label' => 'Archive',
         'dc_label' => 'Identifier',
         'search_field' => true,
+        'controlled' => true,
+        'load_from_db' => true,
     ],
     FIELD_FOLDER => [
         'id' => '66',
         'label' => 'Folder',
         'dc_label' => 'Has Format',
         'search_field' => true,
+        'controlled' => true,
+        'load_from_db' => true,
     ],
     FIELD_NUMBER => [
         'id' => '68',
