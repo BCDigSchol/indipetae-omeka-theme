@@ -23,7 +23,7 @@ const FIELD_TO = 'to';
 const FIELD_LEFT_FOR_MISSION = 'left_for_mission';
 const FIELD_DOCUMENT_ID = 'document_id';
 const FIELD_ARCHIVE = 'collection';
-const FIELD_FOLDER= 'folder';
+const FIELD_FOLDER = 'folder';
 const FIELD_NUMBER = 'number';
 const FIELD_YEAR = 'year';
 const FIELD_MONTH = 'month';
@@ -80,7 +80,7 @@ const METADATA_FIELDS = [
         'label' => 'Year',
         'dc_label' => 'Date',
         'search_field' => true,
-        'range'=> true
+        'range' => true
     ],
 
     FIELD_MONTH => [
@@ -89,7 +89,20 @@ const METADATA_FIELDS = [
         'dc_label' => 'Temporal Coverage',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true,
+        'values' => [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ],
         'has_facet' => true
     ],
 
@@ -143,7 +156,7 @@ const METADATA_FIELDS = [
         'dc_label' => 'Medium',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true,
+        'values' => ['Yes', 'No', 'Undetermined']
     ],
     FIELD_DESTINATIONS => [
         'id' => '45',
@@ -178,7 +191,7 @@ const METADATA_FIELDS = [
         'dc_label' => 'Date Issued',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true,
+        'values' => ['Yes', 'No', 'To be determined']
     ],
     FIELD_LANGUAGE => [
         'id' => '44',
