@@ -28,8 +28,7 @@ const METADATA_MAP = [
     'Links' => 'Source',
     'Notes' => 'Abstract',
     'Archive' => 'Identifier',
-    'Collection' => 'Has Format',
-    'Sub-collection' => 'Has Part',
+    'Folder' => 'Has Format',
     'Number' => 'Has Version',
     'Contributor' => 'Contributor'
 ];

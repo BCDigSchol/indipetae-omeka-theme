@@ -542,6 +542,29 @@ body {
     width: 15%;
 }
 
+#itemfiles .item-file.image-jpeg {
+    display: none;
+}
+
+.letter-right-col > div {
+    margin-bottom: 2rem;
+}
+
+.letter-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-top: .5em;
+}
+
+.letter-wrapper:last-child {
+    display: none;
+}
+
+.letter-wrapper {
+    margin-right: 2em;
+}
+
 @media screen and (max-width: 767px) {
 
   #item_wrap .navigation li {

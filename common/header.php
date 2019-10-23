@@ -26,6 +26,9 @@
     echo head_css();
     ?>
 
+    <!-- Icons -->
+    <link rel="icon" href="/themes/minimalist/img/favicon.ico" type="image/x-icon" / >
+
     <!-- JavaScripts -->
     <?php
     queue_js_file(array('jquery-accessibleMegaMenu', 'minimalist', 'globals'));

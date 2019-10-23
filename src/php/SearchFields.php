@@ -80,7 +80,7 @@ const METADATA_FIELDS = [
         'label' => 'Year',
         'dc_label' => 'Date',
         'search_field' => true,
-        'range'=> true,
+        'range'=> true
     ],
 
     FIELD_MONTH => [
@@ -89,7 +89,8 @@ const METADATA_FIELDS = [
         'dc_label' => 'Temporal Coverage',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true
+        'load_from_db' => true,
+        'has_facet' => true
     ],
 
     FIELD_DAY => [
@@ -105,7 +106,9 @@ const METADATA_FIELDS = [
         'label' => 'From (City)',
         'dc_label' => 'Coverage',
         'search_field' => true,
-        'has_facet' => true
+        'has_facet' => true,
+        'controlled' => true,
+        'load_from_db' => true,
     ],
     FIELD_FROM_INSTITUTION => [
         'id' => '70',
