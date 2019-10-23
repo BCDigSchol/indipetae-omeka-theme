@@ -61,8 +61,6 @@
                 <?php else: ?>
                     <?= __('Search did not return any results.') ?>
                 <?php endif; ?>
-
-                <?= pagination_links() ?>
             </section>
 
         </div>
