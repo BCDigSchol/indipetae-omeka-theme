@@ -48,7 +48,7 @@ function handleSubmit(event) {
         }
     });
 
-    // Build year range inpu
+    // Build year range input
     let yearMin = document.querySelector('#indipetae-advanced-search-form #date_min');
     let yearMax = document.querySelector('#indipetae-advanced-search-form #date_max');
     if (yearMin || yearMax) {
@@ -81,6 +81,11 @@ function resetForm(event) {
     event.preventDefault();
 }
 
+/**
+ * Add an Advanced Search field
+ *
+ * @param event
+ */
 function addField(event) {
     const field = event.target.dataset.field;
     if (!addedFields.has(field)) {
@@ -90,19 +95,19 @@ function addField(event) {
         if (template.content) {
             clone = template.content.cloneNode(true);
             addedFields.add(field);
-
         } else {
             clone = createElement(template.innerHTML);
         }
+
+        // Generate random 'id' attribute for the new input and a matching label 'for' attribute. Required since
+        // we might have more than one search box for each field.
         const idAppend = Math.random().toString().slice(2,11);
         const needsNewId =clone.querySelector(`[id]`);
-        needsNewId.id = `${needsNewId.id}_${idAppend}`;
         const needsNewFor = clone.querySelector('label');
+        needsNewId.id = `${needsNewId.id}_${idAppend}`;
         needsNewFor.setAttribute('for', needsNewId.id);
-        console.log(needsNewId);
-        console.log(needsNewFor);
+
         appliedFields.appendChild(clone);
-        grayOut(event.target);
     }
 }
 

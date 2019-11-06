@@ -2,8 +2,6 @@
 
 namespace BCLib\Indipetae;
 
-use function JmesPath\search;
-
 require_once __DIR__ . '/SearchFields.php';
 
 class ThemeHelpers
@@ -91,6 +89,15 @@ class ThemeHelpers
         return tag_attributes($formAttributes);
     }
 
+    /**
+     * Generate HTML for an Advanced Search input field
+     *
+     * Given the name of the field (from SearchFields.php), generates the HTML needed to add that element as an
+     * available Advanced Search field.
+     *
+     * @param string $field_name
+     * @return string
+     */
     public static function advSearchInput(string $field_name): string
     {
         $fields = MetadataMap::getMap();
@@ -100,6 +107,15 @@ class ThemeHelpers
          */
         $field = $fields->getField($field_name);
 
+        // The "archive" field is a special case, because it is derived from a Collection name instead of an
+        // ElementText.
+        if ($field_name === FIELD_ARCHIVE) {
+            $field_name = 'archive';
+            $input_tag = self::advSearchSelect($field, $field_name);
+            return self::advancedSearchInputTemplate($field_name, 'Archive', $input_tag);
+        }
+
+        // What is the appropriate input element for the field?
         if ($field->is_controlled) {
             $input_tag = self::advSearchSelect($field, $field_name);
         } elseif ($field->is_range) {
@@ -110,19 +126,7 @@ class ThemeHelpers
 
         $field_label = __($field->dublin_core_label);
 
-        return <<<HTML
-<div id="adv-search__{$field_name}_template" style="display: none">
-    <div class="advanced-search-field adv-search-field--{$field_name} row">
-        <div class="col-md-2 advanced-search-field__label-row">
-            <label class="advanced-search-field__label" for="$field_name">$field_label</label>
-        </div>
-        <div class="col-md-10">
-             $input_tag
-             <button class="advanced-search-field__delete-button"  type="button" data-field="$field_name">Remove $field_label</button>
-        </div>
-    </div>
-</div>
-HTML;
+        return self::advancedSearchInputTemplate($field_name, $field_label, $input_tag);
     }
 
     /**
@@ -166,14 +170,26 @@ HTML;
 TAG;
     }
 
+    /**
+     * Build a <select> for Advanced Search
+     *
+     * @param SearchField $field
+     * @param string $field_name
+     * @return string
+     */
     private static function advSearchSelect(SearchField $field, string $field_name): string
     {
-        $field_id = $field->field_id;
 
-        $values = $field->load_from_db ? self::getElementTextListFromDB($field_id) : $field->values;
+        // Archives are a special case, since they are derived from a Collection rather than an ElementText.
+        if ($field_name === FIELD_ARCHIVE) {
+            $values = ['New Society (1814-1939)'];
+        } else {
+            $field_id = $field->field_id;
+            $values = $field->load_from_db ? self::getElementTextListFromDB($field_id) : $field->values;
+        }
 
+        // Build the <option> elements.
         $options = array_map(self::class . '::selectOption', $values);
-
         array_unshift($options,
             '<option value="" class="advanced-search-field__please_select" selected disabled hidden >Select</option>');
         $options_tags = implode("\n", $options);
@@ -222,5 +238,30 @@ TAG;
     {
         return "<option>$value</option>";
 
+    }
+
+    /**
+     * Render an Advanced Search input template
+     *
+     * @param string $name
+     * @param string $label
+     * @param string $input_tag
+     * @return string
+     */
+    private static function advancedSearchInputTemplate(string $name, string $label, string $input_tag): string
+    {
+        return <<<HTML
+<div id="adv-search__{$name}_template" style="display: none">
+    <div class="advanced-search-field adv-search-field--{$name} row">
+        <div class="col-md-2 advanced-search-field__label-row">
+            <label class="advanced-search-field__label" for="$name">$label</label>
+        </div>
+        <div class="col-md-10">
+             $input_tag
+             <button class="advanced-search-field__delete-button"  type="button" data-field="$name">Remove $label</button>
+        </div>
+    </div>
+</div>
+HTML;
     }
 }
