@@ -111,7 +111,7 @@ class ThemeHelpers
         $field_label = __($field->dublin_core_label);
 
         return <<<HTML
-<template id="adv-search__{$field_name}_template" style="display: none">
+<div id="adv-search__{$field_name}_template" style="display: none">
     <div class="advanced-search-field adv-search-field--{$field_name} row">
         <div class="col-md-2 advanced-search-field__label-row">
             <label class="advanced-search-field__label" for="$field_name">$field_label</label>
@@ -121,7 +121,7 @@ class ThemeHelpers
              <button class="advanced-search-field__delete-button"  type="button" data-field="$field_name">Remove $field_label</button>
         </div>
     </div>
-</template>
+</div>
 HTML;
     }
 
@@ -162,7 +162,7 @@ HTML;
     private static function advSearchTextInput(SearchField $field, string $field_name): string
     {
         return <<<TAG
-<input class="advanced-search-field__input" type="text" id="$field_name" name="$field_name" />
+<input class="advanced-search-field__input" type="text" id="$field_name" name="{$field_name}[][or]" />
 TAG;
     }
 
@@ -179,7 +179,7 @@ TAG;
         $options_tags = implode("\n", $options);
 
         return <<<TAG
-<select class="advanced-search-field__select" type="text" id="$field_name" name="$field_name">
+<select class="advanced-search-field__select" type="text" id="$field_name" name="{$field_name}[][or]">
         $options_tags
 </select>
 TAG;

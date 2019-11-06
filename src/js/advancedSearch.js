@@ -32,24 +32,15 @@ const grayedOutClass = 'adv-select__opt--grayed-out';
  */
 function handleSubmit(event) {
 
-    console.log('before prevent');
-
     // Don't submit form.
     event.preventDefault();
-
-    console.log('after prevent');
-
 
     // Build query string by extracting result from all non-empty input fields.
     const text_inputs = Array.prototype.slice.call(document.querySelectorAll('#indipetae-advanced-search-form .advanced-search-field__input'));
     const selects = Array.prototype.slice.call(document.querySelectorAll('#indipetae-advanced-search-form .advanced-search-field__select'));
     const simpleInputs = text_inputs.concat(selects);
 
-    console.log('after spread');
-
     const queryArray = [];
-
-    console.log('after const');
 
     simpleInputs.forEach(function (parsedInput) {
         if (parsedInput.value) {
@@ -66,14 +57,7 @@ function handleSubmit(event) {
         queryArray.push(`year=${yearMin}-${yearMax}`);
     }
 
-    console.log('after year');
-
-
     const queryString = queryArray.join('&');
-
-    console.log('after join');
-
-    console.log(form.action + `?${queryString}`);
 
     // Redirect page to the search URL.
     window.location = form.action + `?${queryString}`;
@@ -110,6 +94,13 @@ function addField(event) {
         } else {
             clone = createElement(template.innerHTML);
         }
+        const idAppend = Math.random().toString().slice(2,11);
+        const needsNewId =clone.querySelector(`[id]`);
+        needsNewId.id = `${needsNewId.id}_${idAppend}`;
+        const needsNewFor = clone.querySelector('label');
+        needsNewFor.setAttribute('for', needsNewId.id);
+        console.log(needsNewId);
+        console.log(needsNewFor);
         appliedFields.appendChild(clone);
         grayOut(event.target);
     }
