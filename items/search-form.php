@@ -3,6 +3,8 @@
 use BCLib\Indipetae;
 use BCLib\Indipetae\ThemeHelpers;
 
+$date_range = ThemeHelpers::getMinMaxYears();
+
 ?>
 
 <div class="row">
@@ -46,6 +48,8 @@ use BCLib\Indipetae\ThemeHelpers;
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DESTINATIONS) ?>
 
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DATE_RANGE) ?>
+
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_YEAR) ?>
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_MONTH) ?>
@@ -69,6 +73,9 @@ use BCLib\Indipetae\ThemeHelpers;
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_NUMBER) ?>
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_CONTRIBUTOR) ?>
+
+<span style="display: none" id="min-date-holder"><?= $date_range->min ?></span>
+<span style="display: none" id="max-date-holder"><?= $date_range->max ?></span>
 
 <?= js_tag('indipetae.bundle') ?>
 <script>

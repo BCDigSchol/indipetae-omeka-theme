@@ -10,6 +10,8 @@
 const form = document.getElementById('indipetae-advanced-search-form');
 const appliedFields = document.getElementById('applied-fields');
 
+const dateRangeAdded = false;
+
 /**
  * The reset button
  *
@@ -21,6 +23,9 @@ const addedFields = new Set();
 
 const grayedOutClass = 'adv-select__opt--grayed-out';
 
+// Minimum and maximum years for date range searches.
+const minYear = parseInt(document.getElementById('min-date-holder').innerText);
+const maxYear = parseInt(document.getElementById('max-date-holder').innerText);
 
 /**
  * Handle a form submission
@@ -101,13 +106,15 @@ function addField(event) {
 
         // Generate random 'id' attribute for the new input and a matching label 'for' attribute. Required since
         // we might have more than one search box for each field.
-        const idAppend = Math.random().toString().slice(2,11);
-        const needsNewId =clone.querySelector(`[id]`);
+        const idAppend = Math.random().toString().slice(2, 11);
+        const needsNewId = clone.querySelector(`[id]`);
         const needsNewFor = clone.querySelector('label');
         needsNewId.id = `${needsNewId.id}_${idAppend}`;
         needsNewFor.setAttribute('for', needsNewId.id);
 
         appliedFields.appendChild(clone);
+
+        addDateRangeSelector($(`.adv-search-field--date_range #${needsNewId.id}`));
     }
 }
 
@@ -146,6 +153,20 @@ function deleteSearchField(element) {
         addedFields.delete(field);
         unGrayOut(field);
     }
+}
+
+function addDateRangeSelector($daterangeinput) {
+    $daterangeinput.daterangepicker({
+        "showDropdowns": true,
+        "startDate": `${minYear}/1/1`,
+        "endDate": `${maxYear}/12/31`,
+        "locale": {
+            "format": "YYYY-MM-DD",
+            "separator": " – "
+        },
+        "minYear": minYear,
+        "maxYear": maxYear
+    });
 }
 
 /**

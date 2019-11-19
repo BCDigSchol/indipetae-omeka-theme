@@ -201,18 +201,28 @@ TAG;
 TAG;
     }
 
-    private static function advSearchRange(array $field, string $field_name): string
+    private static function advSearchRange($field, string $field_name): string
     {
         $min_field_name = "{$field_name}_min";
         $max_field_name = "{$field_name}_max";
 
         return <<<TAG
         <div class="advanced-search-field__range-inputs">
-<label for="$inn_field_name" class="advanced-search-field__range-label" data-point="min" data-field="$field_name">Minimum</label>
-<input class="advanced-search-field__input--range" type="text" id="$min_field_name" name="$min_field_name" />
+<label for="$min_field_name" class="advanced-search-field__range-label" data-point="min" data-field="$field_name">Minimum</label>
+<input class="advanced-search-field__input--range .advanced-search-field__input" type="text" id="$min_field_name" name="$min_field_name" />
 <label for="$max_field_name" class="advanced-search-field__range-label" data-point="max" data-field="$field_name">Maximum</label>
-<input class="advanced-search-field__input--range" type="text" id="$max_field_name" name="$max_field_name" />
+<input class="advanced-search-field__input--range .advanced-search-field__input" type="text" id="$max_field_name" name="$max_field_name" />
 </div>
+TAG;
+    }
+
+    private static function advSearchDateRange($field, string $field_name): string
+    {
+        $min_field_name = "{$field_name}_min";
+        $max_field_name = "{$field_name}_max";
+
+        return <<<TAG
+       <input class="advanced-search-field__input advanced-search-field__date-range-input" type="text" id="$field_name" name="{$field_name}[][or]" />
 TAG;
     }
 
@@ -263,5 +273,24 @@ TAG;
     </div>
 </div>
 HTML;
+    }
+
+    public static function getMinMaxYears(): \stdClass
+    {
+        $db = get_db();
+        $select_sql = <<<SQL
+SELECT MIN(omeka_element_texts.text) as min_year,
+       MAX(omeka_element_texts.text) as max_year
+FROM omeka_element_texts
+WHERE omeka_element_texts.element_id = 40
+AND omeka_element_texts.text <> '';
+SQL;
+        $result = $db->getTable('ElementText')->fetchAll($select_sql);
+
+        $response = new \stdClass();
+        $response->min = $result[0]['min_year'];
+        $response->max = $result[0]['max_year'];
+
+        return $response;
     }
 }

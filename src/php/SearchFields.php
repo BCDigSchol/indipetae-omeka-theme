@@ -14,6 +14,7 @@ const FIELD_RECIPIENT = 'recipient';
 const FIELD_TRANSCRIPTION = 'transcription';
 const FIELD_TRANSCRIPTION_BACK = 'transcription_back';
 const FIELD_DATE = 'date';
+const FIELD_DATE_RANGE = 'date_range';
 const FIELD_SENDER = 'sender';
 const FIELD_FROM = 'from';
 const FIELD_CONTRIBUTOR = 'contributor';
@@ -43,7 +44,7 @@ const METADATA_FIELDS = [
         'dc_label' => 'Description',
         'search_field' => true,
         'controlled' => false,
-        'range' => false
+        'is_range' => false
     ],
     FIELD_TRANSCRIPTION_BACK => [
         'id' => '78',
@@ -72,15 +73,21 @@ const METADATA_FIELDS = [
         'label' => 'Date',
         'dc_label' => 'Date Submitted',
         'search_field' => true,
-        'range' => true
+        'is_range' => true
     ],
-
+    FIELD_DATE_RANGE => [
+        'id' => '123456789',
+        'label' => 'Date range',
+        'dc_label' => 'Date range',
+        'search_field' => true,
+        'is_date_range' => true
+    ],
     FIELD_YEAR => [
         'id' => '40',
         'label' => 'Year',
         'dc_label' => 'Date',
         'search_field' => true,
-        'range' => true
+        'is_range' => true
     ],
 
     FIELD_MONTH => [
