@@ -122,6 +122,21 @@ h1 {
     padding: 0 .5em;
 }
 
+.advanced-search-field__or-label {
+    font-weight: 400;
+}
+
+button.add-query-row-button {
+    background: #77749d;
+    color: white;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    min-height: 30px;
+    text-align: center;
+    padding: 0;
+}
+
 legend {
   padding:1%;
 }
@@ -610,3 +625,4 @@ body {
   box-shadow: 0 0 0 .2rem rgba(130,138,145,.5);
   padding: 10px;
 }
+

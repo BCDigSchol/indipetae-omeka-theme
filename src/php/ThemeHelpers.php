@@ -115,7 +115,6 @@ class ThemeHelpers
             return self::advancedSearchInputTemplate($field_name, 'Archive', $input_tag);
         }
 
-        // What is the appropriate input element for the field?
         if ($field->is_controlled) {
             $input_tag = self::advSearchSelect($field, $field_name);
         } elseif ($field->is_range) {
@@ -187,7 +186,17 @@ TAG;
             $field_id = $field->field_id;
             $values = $field->load_from_db ? self::getElementTextListFromDB($field_id) : $field->values;
         }
+        return self::selectBox($field_name, $values);
+    }
 
+
+    /**
+     * @param string $field_name
+     * @param $values
+     * @return string
+     */
+    private static function selectBox(string $field_name, $values): string
+    {
         // Build the <option> elements.
         $options = array_map(self::class . '::selectOption', $values);
         array_unshift($options,
@@ -208,9 +217,9 @@ TAG;
 
         return <<<TAG
         <div class="advanced-search-field__range-inputs">
-<label for="$min_field_name" class="advanced-search-field__range-label" data-point="min" data-field="$field_name">Minimum</label>
+<label for="$min_field_name" class="advanced-search-field__range-label" data-point="min" data-field="$field_name">Min.</label>
 <input class="advanced-search-field__input--range .advanced-search-field__input" type="text" id="$min_field_name" name="$min_field_name" />
-<label for="$max_field_name" class="advanced-search-field__range-label" data-point="max" data-field="$field_name">Maximum</label>
+<label for="$max_field_name" class="advanced-search-field__range-label" data-point="max" data-field="$field_name">Max.</label>
 <input class="advanced-search-field__input--range .advanced-search-field__input" type="text" id="$max_field_name" name="$max_field_name" />
 </div>
 TAG;
@@ -292,5 +301,27 @@ SQL;
         $response->max = $result[0]['max_year'];
 
         return $response;
+    }
+
+    public static function advancedSearchNumberRange()
+    {
+        $min_field_name = 'number_min';
+        $max_field_name = 'number_max';
+
+        $numbers = array_map(static function ($number) {
+            return (int)preg_replace('/^.+ +/', '', $number);
+        }, self::getElementTextListFromDB(68));
+
+        $min_select_box = self::selectBox($min_field_name, $numbers);
+        $max_select_box = self::selectBox($max_field_name, $numbers);
+
+        return <<<TAG
+        <div class="advanced-search-field__range-inputs">
+<label for="$min_field_name" class="advanced-search-field__range-label" data-point="min" data-field="$field_name">Minimum</label>
+$min_select_box
+<label for="$max_field_name" class="advanced-search-field__range-label" data-point="max" data-field="$field_name">Maximum</label>
+$max_select_box
+</div>
+TAG;
     }
 }

@@ -50,8 +50,6 @@ $date_range = ThemeHelpers::getMinMaxYears();
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DATE_RANGE) ?>
 
-<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_YEAR) ?>
-
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_MONTH) ?>
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DAY) ?>

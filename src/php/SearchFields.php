@@ -242,6 +242,7 @@ const METADATA_FIELDS = [
         'label' => 'Number',
         'dc_label' => 'Has Version',
         'search_field' => true,
+        'is_range' => true
     ],
     FIELD_CONTRIBUTOR => [
         'id' => '37',

@@ -54,7 +54,9 @@ $collection_title = metadata($collection, ['Dublin Core', 'Title']);
         <?php if (metadata('item', 'Collection Name')): ?>
             <div id="collection" class="element">
                 <h3><?php echo __('Collection'); ?></h3>
-                <div class="element-text"><a href="/elasticsearch/search?collection=<?= $collection_title ?>"><?= $collection_title ?></a></div>
+                <div class="element-text">
+                    <a href="/elasticsearch/search?collection=<?= $collection_title ?>"><?= $collection_title ?></a>
+                </div>
             </div>
         <?php endif; ?>
 

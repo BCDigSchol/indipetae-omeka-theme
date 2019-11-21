@@ -38,9 +38,8 @@
         <div class="dropdown-menu adv-select__opts">
             <ul>
                 <li class="adv-select__opt adv-select__opt--date_range" data-field="date_range">Date range</li>
-                <li class="adv-select__opt adv-select__opt--date" data-field="year">Year</li>
-                <li class="adv-select__opt adv-select__opt--date" data-field="month">Month</li>
-                <li class="adv-select__opt adv-select__opt--date" data-field="day">Day</li>
+                <li class="adv-select__opt adv-select__opt--month" data-field="month">Month</li>
+                <li class="adv-select__opt adv-select__opt--day" data-field="day">Day</li>
             </ul>
         </div>
     </div>
