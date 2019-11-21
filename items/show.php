@@ -6,6 +6,11 @@
     <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
 <?php endif; ?>
 
+<?php
+$collection = get_collection_for_item();
+$collection_title = metadata($collection, ['Dublin Core', 'Title']);
+?>
+
 <!-- BEGIN -->
 
 <div id="item_wrap" class="row">
@@ -49,8 +54,7 @@
         <?php if (metadata('item', 'Collection Name')): ?>
             <div id="collection" class="element">
                 <h3><?php echo __('Collection'); ?></h3>
-                <?php /*<div class="element-text"><p><?php echo link_to_collection_for_item(); ?></p></div>*/ ?>
-                <div class="element-text"><?php echo bcl_link_to_browse_collection(get_collection_for_item()); ?></div>
+                <div class="element-text"><a href="/elasticsearch/search?collection=<?= $collection_title ?>"><?= $collection_title ?></a></div>
             </div>
         <?php endif; ?>
 
