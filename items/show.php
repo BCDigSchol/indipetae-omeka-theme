@@ -17,7 +17,7 @@ $collection_title = metadata($collection, ['Dublin Core', 'Title']);
 
     <!-- ITEMS ON LEFT -->
     <div class="col-md-3">
-        <?php echo all_element_texts('item'); ?>
+        <?php echo all_element_texts('item', ['show_empty_elements' => true]); ?>
 
         <!-- The following returns all of the files associated with an item. -->
         <?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
