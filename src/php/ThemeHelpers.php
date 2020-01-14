@@ -216,11 +216,11 @@ TAG;
         $max_field_name = "{$field_name}_max";
 
         return <<<TAG
-        <div class="advanced-search-field__range-inputs">
+        <div class="advanced-search-field__range-inputs"  data-field="$field_name">
 <label for="$min_field_name" class="advanced-search-field__range-label" data-point="min" data-field="$field_name">Min.</label>
-<input class="advanced-search-field__input--range .advanced-search-field__input" type="text" id="$min_field_name" name="$min_field_name" />
+<input class="advanced-search-field__input--range advanced-search-field__input--range__min" type="text" id="$min_field_name" name="{$min_field_name}" />
 <label for="$max_field_name" class="advanced-search-field__range-label" data-point="max" data-field="$field_name">Max.</label>
-<input class="advanced-search-field__input--range .advanced-search-field__input" type="text" id="$max_field_name" name="$max_field_name" />
+<input class="advanced-search-field__input--range advanced-search-field__input--range__max" type="text" id="$max_field_name" name="{$max_field_name}" />
 </div>
 TAG;
     }

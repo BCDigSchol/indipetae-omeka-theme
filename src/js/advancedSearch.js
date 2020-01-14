@@ -45,12 +45,21 @@ function handleSubmit(event) {
     const selects = Array.prototype.slice.call(document.querySelectorAll('#indipetae-advanced-search-form .advanced-search-field__select'));
     const simpleInputs = text_inputs.concat(selects);
 
+    const range_inputs = Array.prototype.slice.call(document.querySelectorAll('#indipetae-advanced-search-form .advanced-search-field__range-inputs'));
+
     const queryArray = [];
 
     simpleInputs.forEach(function (parsedInput) {
         if (parsedInput.value) {
             queryArray.push(parsedInput.name + "=" + parsedInput.value);
         }
+    });
+
+    range_inputs.forEach(function (rangeInput){
+        const minVal = rangeInput.querySelector('.advanced-search-field__input--range__min').value;
+        const maxVal = rangeInput.querySelector('.advanced-search-field__input--range__max').value;
+        const field = rangeInput.dataset.field;
+        queryArray.push(`${field}[][or]=${minVal} – ${maxVal}`);
     });
 
     // Build year range input
