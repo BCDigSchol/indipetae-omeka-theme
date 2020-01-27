@@ -9,13 +9,18 @@ require_once __DIR__ . '/SearchFields.php';
 
 /**
  * Helper methods for use in view templates
- * 
+ *
  * These are a variety of helper methods called from different templates. All methods are static.
- * 
+ *
  * @package BCLib\Indipetae
  */
 class ThemeHelpers
 {
+    public const THEME_PATH = '/themes/minimalist';
+    public const CSS_PATH = self::THEME_PATH . '/css';
+    public const JS_PATH = self::THEME_PATH . '/javascripts';
+    public const IMG_PATH = self::THEME_PATH . '/img';
+
     /**
      * Get attributes  advanced search <form> element
      *
@@ -245,5 +250,32 @@ AND omeka_element_texts.text <> '';
 SQL;
         $result = $db->getTable('ElementText')->fetchAll($select_sql);
         return new Range($result[0]['min_year'], $result[0]['max_year']);
+    }
+
+    /**
+     * Return the text of the page title
+     *
+     * @param string|null $title
+     * @return string
+     */
+    public static function pageTitle(?string $title = null): string
+    {
+        if (isset($title)) {
+            $titleParts[] = strip_formatting($title);
+        }
+        $titleParts[] = option('site_title');
+        return implode(' &middot; ', $titleParts);
+    }
+
+    /**
+     * Is the current page Advanced Search?
+     *
+     * @param string|null $url
+     * @return bool|null
+     */
+    public static function isAdvancedSearch(string $url = null): ?bool
+    {
+        $url = $url ?? current_url();
+        return $url === '/items/search';
     }
 }
