@@ -1,0 +1,115 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b8c929a0dbc827d5b9cb4b8eb9df97f5",
+    "packages": [
+        {
+            "name": "ajaxray/php-watermark",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ajaxray/php-watermark.git",
+                "reference": "7e4c79d063bc52c39145eadda6305a04303f5703"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ajaxray/php-watermark/zipball/7e4c79d063bc52c39145eadda6305a04303f5703",
+                "reference": "7e4c79d063bc52c39145eadda6305a04303f5703",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6 || >=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.7.5",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ajaxray\\PHPWatermark\\": "src/Ajaxray/PHPWatermark/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anis Uddin Ahmad",
+                    "email": "anis.programmer@gmail.com"
+                }
+            ],
+            "description": "Add text or image watermark on images.",
+            "homepage": "http://github.com/ajaxray/php-watermark",
+            "keywords": [
+                "image",
+                "image-manipulation",
+                "imagemagick-watermark",
+                "imagemagick-wrapper",
+                "watermark"
+            ],
+            "time": "2017-03-18T05:50:04+00:00"
+        },
+        {
+            "name": "michelf/php-markdown",
+            "version": "1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michelf/php-markdown.git",
+                "reference": "c83178d49e372ca967d1a8c77ae4e051b3a3c75c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/c83178d49e372ca967d1a8c77ae4e051b3a3c75c",
+                "reference": "c83178d49e372ca967d1a8c77ae4e051b3a3c75c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.3 <5.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Michelf\\": "Michelf/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Michel Fortin",
+                    "email": "michel.fortin@michelf.ca",
+                    "homepage": "https://michelf.ca/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "John Gruber",
+                    "homepage": "https://daringfireball.net/"
+                }
+            ],
+            "description": "PHP Markdown",
+            "homepage": "https://michelf.ca/projects/php-markdown/",
+            "keywords": [
+                "markdown"
+            ],
+            "time": "2019-12-02T02:32:27+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

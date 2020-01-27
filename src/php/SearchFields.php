@@ -2,6 +2,13 @@
 
 namespace BCLib\Indipetae;
 
+/**
+ * Constants used to build MetadataFields and the MetadataMap
+ */
+
+/**
+ * MetadataMap keys
+ */
 const FIELD_TITLE = 'title';
 const FIELD_GRADE = 'grade';
 const FIELD_MODEL = 'jmodel';
@@ -31,6 +38,7 @@ const FIELD_MONTH = 'month';
 const FIELD_DAY = 'day';
 const FIELD_FROM_INSTITUTION = 'from_institution';
 
+// @todo Immediately instantiate MetadataFields and the MetadataMap instead of creating a config array
 const METADATA_FIELDS = [
     FIELD_TITLE => [
         'label' => 'Title',

@@ -1,0 +1,20 @@
+{
+    "name": "bclib/indipetae-theme",
+    "description": "Theme for Indipetae Project Omeka instance",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Benjamin Florin",
+            "email": "benjamin.florin@bc.edu"
+        }
+    ],
+    "require": {
+        "michelf/php-markdown": "^1.9",
+        "ajaxray/php-watermark": "^0.1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "BCLib\\Indipetae\\": "src/php/"
+        }
+    }
+}

@@ -5,51 +5,46 @@ namespace BCLib\Indipetae;
 require_once __DIR__.'/MetadataField.php';
 require_once __DIR__.'/SearchField.php';
 
-const METADATA_MAP = [
-    'Title' => 'Title',
-    'Transcription' => 'Description',
-    'Transcription (back)' => 'Extent',
-    'Sender' => 'Creator',
-    'Grade S.J.' => 'Replaces',
-    'Year' => 'Date',
-    'Month' => 'Temporal Coverage',
-    'Date' => 'Date Submitted',
-    'Day' => 'References',
-    'From (City)' => 'Coverage',
-    'From (Institution)' => 'Is Part Of',
-    'To' => 'Spatial Coverage',
-    'Recipient' => 'Audience',
-    'Anterior desire' => 'Medium',
-    'Destination(s)' => 'Publisher',
-    'Models/Saints/Missionaries' => 'Subject',
-    'Other names' => 'Relation',
-    'Left for mission lands' => 'Date Issued',
-    'Language of the Letter' => 'Language',
-    'Links' => 'Source',
-    'Notes' => 'Abstract',
-    'Archive' => 'Identifier',
-    'Folder' => 'Has Format',
-    'Number' => 'Has Version',
-    'Contributor' => 'Contributor'
-];
-
+/**
+ * Map Indipetae project metadata fields to Omeka's internal DC fields
+ *
+ * The project does not use the default DC metadata labels ('names' in the omeka_elements table),
+ * but it does store data in those fields under different labels. The MetadataMap connects
+ * Indipetae fields to the corresponding DC fields.
+ *
+ * The map's internal structure:
+ *
+ *     [
+ *       Field key 1 => MetadataField 1,
+ *       Field key 2 => MetadataField 2,
+ *       Field key 3 => MetadataField 3,
+ *       ...
+ *     ]
+ *
+ * Where the field keys are strings stored as BCLib\Indipetae\FIELD_* constants (e.g. FIELD_SENDER,
+ * FIELD_MONTH). Those constants and the corresponding configuration arrays for the MetadataFields
+ * are found in SearchFields.php.
+ *
+ * @package BCLib\Indipetae
+ */
 class MetadataMap
 {
-
     /**
+     * The MetadataMap is a singleton to ensure that all sources are loading from the same map.
+     *
      * @var MetadataMap
      */
     private static $instance = null;
 
-    /**
-     * @var MetadataField[]
-     */
+    /** @var MetadataField[] */
     private $fields;
 
     /**
+     * Get the MetadataMap
+     *
      * @return MetadataMap
      */
-    public static function getMap()
+    public static function getMap(): MetadataMap
     {
         if (self::$instance === null) {
             self::$instance = new MetadataMap(METADATA_FIELDS);
@@ -57,6 +52,11 @@ class MetadataMap
         return self::$instance;
     }
 
+    /**
+     * Private constructor
+     *
+     * @param array $list_config
+     */
     private function __construct(array $list_config)
     {
         foreach ($list_config as $key => $member_config) {
@@ -65,6 +65,12 @@ class MetadataMap
         }
     }
 
+    /**
+     * Get a metadata field
+     *
+     * @param string $key an Indipetae\FIELD_* constant (e.g. Indipetae\FIELD_SENDER)
+     * @return MetadataField
+     */
     public function getField(string $key): MetadataField
     {
         return $this->fields[$key];

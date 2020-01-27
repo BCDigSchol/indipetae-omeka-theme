@@ -1,0 +1,53 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use BCLib\Indipetae\Import\CSVWriter;
+use BCLib\Indipetae\Import\ImageListBuilder;
+use BCLib\Indipetae\Import\InputParser;
+use BCLib\Indipetae\Import\WordToMD;
+
+// For now, use a set image dir.
+const IMG_IN_DIR = '/Users/benjaminflorin/Desktop/transcriptions/img_in';
+const IMG_OUT_DIR = '/Users/benjaminflorin/Desktop/transcriptions/img_out';
+
+// Check input
+if (!isset($argv[1], $argv[2], $argv[3])) {
+    echo "Missing inputs\n";
+    print_usage_and_exit();
+}
+[$full_command, $word_filepath, $img_dir, $csv_filepath] = $argv;
+
+// Convert Word file to one big markdown file
+$markdown = WordToMD::convert($word_filepath);
+
+file_put_contents("{$argv[3]}.md", $markdown);
+
+// Split the markdown file into a batch of letters
+$batch = InputParser::buildLetters($markdown);
+
+// Build the list of images.
+$image_lister = new ImageListBuilder(IMG_IN_DIR, IMG_OUT_DIR);
+
+// Add the images to each letter
+foreach ($batch as $letter) {
+    echo "Extracting images from {$letter->getCallNumber()}\n";
+    $number = $letter->getNumber();
+    $img_files = $image_lister->findFiles($number);
+    $letter->setFiles($img_files);
+}
+
+// Write the batch to the CSV file.
+echo "Writing to CSV\n";
+$writer = new CSVWriter($csv_filepath, 'https://indipetae.bc.edu/img');
+$writer->write($batch);
+
+exit(0);
+
+function print_usage_and_exit(bool $error = true): void
+{
+    echo "Usage:\n\tmarkdown-to-php WORD_FILE IMG_DIR CSV_FILE\n";
+    $exit_val = $error ? 1 : 0;
+    exit($exit_val);
+}
