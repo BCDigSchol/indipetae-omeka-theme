@@ -28,7 +28,7 @@ class SearchField extends MetadataField
      *
      * @var bool
      */
-    public $load_from_db = false;
+    public $is_loadable = false;
 
     public $values;
     public $search_key;
@@ -49,7 +49,7 @@ class SearchField extends MetadataField
         $this->is_linked = $this->label !== 'Call Number';
 
         $this->is_controlled = $config['controlled'] ?? $this->is_controlled;
-        $this->load_from_db = $config['load_from_db'] ?? $this->load_from_db;
+        $this->is_loadable = $config['load_from_db'] ?? $this->is_loadable;
         $this->is_range = $config['is_range'] ?? $this->is_range;
         $this->values = $config['values'] ?? $this->values;
         $this->search_key = $config['search_key'];
