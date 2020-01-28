@@ -24,8 +24,11 @@ const grayedOutClass = 'adv-select__opt--grayed-out';
 const addedFieldClass = 'advanced-search__added-field';
 
 // Minimum and maximum years for date range searches.
-const minYear = parseInt(document.getElementById('min-date-holder').innerText);
-const maxYear = parseInt(document.getElementById('max-date-holder').innerText);
+const minDateHolder = document.getElementById('min-date-holder');
+const maxDateHolder = document.getElementById('max-date-holder');
+
+const minYear = minDateHolder ? parseInt(minDateHolder.innerText) : 1400;
+const maxYear = maxDateHolder ? parseInt(maxDateHolder.innerText) : 1600;
 
 /**
  * Handle a form submission

@@ -95,7 +95,7 @@ use BCLib\Indipetae\ThemeHelpers;
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/items/browse">Browse Letters</a></li>
+                            <li><a href="/elasticsearch/search/index?q=">Browse Letters</a></li>
                             <li><a href="/collections/browse">Browse by Collection</a></li>
                         </ul>
                     </li>
