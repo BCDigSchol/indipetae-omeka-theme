@@ -6,7 +6,7 @@ try {
 
 $elements = [];
 if (isset($hit['elements'])) {
-    $elements = array_reduce($hit['elements'], function ($hash, $element) {
+    $elements = array_reduce($hit['elements'], static function ($hash, $element) {
         $name = $element['name'];
         $hash[$name] = $element['text'];
         return $hash;
@@ -16,8 +16,8 @@ if (isset($hit['elements'])) {
 $recipients = isset($elements['audience']) ? implode(', ', $elements['audience']) : null;
 $destinations = isset($elements['publisher']) ? implode(', ', $elements['publisher']) : null;
 
-$recipients_heading = count($elements['audience']) > 1 ? 'Recipients' : 'Recipient';
-$destinations_heading = count($elements['publisher']) > 1 ? 'Destinations' : 'Destination';
+$recipients_heading = $recipients && count($elements['audience']) > 1 ? 'Recipients' : 'Recipient';
+$destinations_heading = $destinations && count($elements['publisher']) > 1 ? 'Destinations' : 'Destination';
 
 ?>
 <ul>
