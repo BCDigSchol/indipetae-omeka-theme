@@ -16,6 +16,26 @@ body {
   font-family: "OpenSans", sans-serif;
 }
 
+/* IAJS Header */
+.top-menu {
+  height: 51px;
+}
+
+h1.upper.header-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 27px;
+}
+
+h4.upper.header-sub-title {
+  margin: 10px 0 10px 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
 #top-nav .nav-menu {
   display: flex;
   justify-content: center;
@@ -316,25 +336,40 @@ h3 {
 }
 
 footer .site-links {
-  display: flex;
-  flex-direction: row;
-  /* space-around for IE11, space-evenly for everything else */
-  justify-content: space-around;
-  justify-content: space-evenly;
+  text-align: center;
   list-style-type: none;
   padding: .75em 0;
-  margin: 0;
+  margin: 3% 0;
+  font-size: 14px;
 }
 
 .site-links li a{
   color: #872334;
+  text-decoration: none;
+}
+
+
+.site-links li a:hover {
   text-decoration: underline;
 }
+
+.site-links li {
+  display: inline-block;
+  border-right: 1px solid;
+  padding: 0 3%;
+  line-height: 1;
+}
+
+.site-links li:last-child {
+  border-right: 0px;
+}
+
 
 .copyright {
   text-align:center;
   padding-top: 2%;
-  color:#8a6b46;
+  color: #B29D6C;
+  font-size: 14px;
 }
 
 
