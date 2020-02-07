@@ -20,7 +20,8 @@ use BCLib\Indipetae\ThemeHelpers;
     <!-- Plugin Stuff -->
     <?php fire_plugin_hook('public_head', ['view' => $this]); ?>
 
-    <link rel="icon" href="<?= ThemeHelpers::IMG_PATH ?>/favicon.ico" type="image/x-icon"/ >
+    <link rel="icon" href="<?= ThemeHelpers::IMG_PATH ?>/favicon.ico" type="image/x-icon"
+    / >
 
     <?= $this->partial('common/partials/css.php') ?>
 
@@ -63,9 +64,6 @@ use BCLib\Indipetae\ThemeHelpers;
 
 <nav id="top-nav" class="navbar desktop-nav" role="navigation">
     <?= public_nav_main() ?>
-    <div id="search-container" role="search">
-        <?= search_form(['show_advanced' => true]) ?>
-    </div>
 </nav>
 
 <!-- NAV ENDS -->
@@ -115,10 +113,6 @@ use BCLib\Indipetae\ThemeHelpers;
                     <li><a href="/contact">Contact</a></li>
                 </ul>
 
-                <div id="search-container" role="search">
-                    <?= search_form(array('show_advanced' => false)) ?>
-                </div>
-
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
@@ -129,4 +123,15 @@ use BCLib\Indipetae\ThemeHelpers;
 
 <article id="content" role="main" tabindex="-1">
 
-    <?php fire_plugin_hook('public_content_top', ['view' => $this]); ?>
+    <?php if (ThemeHelpers::isHomePage()): ?>
+        <?= $this->partial('common/partials/homepage-search.php') ?>
+    <?php endif; ?>
+
+
+    <div class="container">
+
+        <?php if (!ThemeHelpers::isHomePage()): ?>
+            <?= $this->partial('common/partials/page-top-search.php') ?>
+        <?php endif; ?>
+
+        <?php fire_plugin_hook('public_content_top', ['view' => $this]); ?>

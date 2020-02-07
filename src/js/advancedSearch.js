@@ -54,9 +54,12 @@ function handleSubmit(event) {
 
     simpleInputs.forEach(function (parsedInput) {
         if (parsedInput.value) {
-            queryArray.push(parsedInput.name + "=" + parsedInput.value);
+            console.log('happened');
+            queryArray.push(`${parsedInput.name}="${parsedInput.value}"`);
         }
     });
+
+    console.log('running this');
 
     range_inputs.forEach(function (rangeInput){
         const minVal = rangeInput.querySelector('.advanced-search-field__input--range__min').value;

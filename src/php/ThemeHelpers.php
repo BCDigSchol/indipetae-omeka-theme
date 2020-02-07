@@ -278,4 +278,14 @@ SQL;
         $url = $url ?? current_url();
         return $url === '/items/search';
     }
+
+    /**
+     * Are we on the homepage?
+     *
+     * @return bool true if current page is homepage
+     */
+    public static function isHomePage(): bool
+    {
+        return is_current_url('') || is_current_url('index.php');
+    }
 }

@@ -3,10 +3,12 @@
 use BCLib\Indipetae\ThemeHelpers;
 
 ?>
+
+</div>
 </article>
 
 <footer>
-    <div id="footer-container">
+    <div id="footer-container" class="container">
 
         <p class="footer-title">Digital Indipetae Database</p>
         <p>The Digital Indipetae Database is organized by the Institute for Advanced Jesuit Studies in collaboration with the Archivum Romanum Societatis Iesu. Its editorial and scientific boards coordinate the project and promote it within the international community of scholars.</p>
