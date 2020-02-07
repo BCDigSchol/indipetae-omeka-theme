@@ -783,7 +783,7 @@ body {
   padding-top: .5em;
 }
 
-.letter-wrapper:last-child {
+.letter-wrapper a[href*='pdf'] {
   display: none;
 }
 
