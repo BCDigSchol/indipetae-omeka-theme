@@ -187,10 +187,14 @@ TAG;
     private static function getElementTextsFromDB($field_id): array
     {
         // Load all the element texts
-        $db = get_db();
-        $element_texts = $db->getTable('ElementText');
-        $sql = 'element_texts.element_id = ?';
-        $values = $element_texts->findBySql($sql, [$field_id]);
+        $table = get_db()->getTable('ElementText');
+        $select = new \Omeka_Db_Select();
+        $select->distinct()
+            ->from(['t' => 'omeka_element_texts'], ['t.text'])
+            ->join(['i' => 'omeka_items'], 't.record_id = i.id', [])
+            ->where('t.element_id = ?', $field_id)
+            ->where('i.public = ?', 1);
+        $values = $table->fetchObjects($select);
 
         // Strip leading and trailing spaces.
         $values = array_map(static function ($value) {
