@@ -32,9 +32,11 @@ $url_without_facets = get_view()->url('/elasticsearch') . '?q=' . urlencode($que
         <h4><?= $facet->label ?></h4>
         <ul>
             <?php foreach ($facet->buckets as $bucket): ?>
-                <li>
-                    <a href="<?= $bucket->url() ?>"><?= $bucket->display_value ?></a> (<?= $bucket->count ?>)
-                </li>
+                <?php if ($bucket->display_value !== ''): ?>
+                    <li>
+                        <a href="<?= $bucket->url() ?>"><?= $bucket->display_value ?></a> (<?= $bucket->count ?>)
+                    </li>
+                <?php endif; ?>
             <?php endforeach; ?>
         </ul>
     <?php endforeach; ?>
