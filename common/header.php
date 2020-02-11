@@ -24,6 +24,7 @@ use BCLib\Indipetae\ThemeHelpers;
     / >
 
     <?= $this->partial('common/partials/css.php') ?>
+    <?= $this->partial('common/partials/javascript.php') ?>
 
 </head>
 

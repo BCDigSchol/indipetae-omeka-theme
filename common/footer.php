@@ -40,8 +40,6 @@ use BCLib\Indipetae\ThemeHelpers;
     <!-- end wrap -->
 </footer>
 
-<?= $this->partial('common/partials/javascript.php') ?>
-
 <script>
     jQuery(document).ready(function () {
         Omeka.showAdvancedForm();
