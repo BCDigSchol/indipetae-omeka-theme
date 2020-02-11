@@ -3,7 +3,7 @@
 <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 
 <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
-    <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
+    <?php echo files_for_item(['imageSize' => 'fullsize', 'linkAttributes' => ['target' => '__blank']]); ?>
 <?php endif; ?>
 
 <?php
@@ -23,7 +23,7 @@ $collection_title = metadata($collection, ['Dublin Core', 'Title']);
         <?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
             <div id="itemfiles" class="element">
                 <h3><?php echo __('Download PDF'); ?></h3>
-                <div class="element-text"><?php echo files_for_item(); ?></div>
+                <div class="element-text"><?php echo files_for_item(['linkAttributes' => ['target' => '__blank']]); ?></div>
             </div>
         <?php endif; ?>
 
@@ -47,7 +47,8 @@ $collection_title = metadata($collection, ['Dublin Core', 'Title']);
         <h3>Images</h3>
         <?= item_image_gallery([
             'wrapper' => ['class' => 'letter-gallery'],
-            'linkWrapper' => ['class' => 'letter-wrapper']
+            'linkWrapper' => ['class' => 'letter-wrapper'],
+            'link' => ['target' => '__blank']
         ], 'thumbnail') ?>
 
         <!-- If the item belongs to a collection, the following creates a link to the browse items list in that collection. -->
