@@ -543,6 +543,11 @@ form#home-search__form {
   padding-bottom: 0;
 }
 
+.aggregation__modal-close-button:hover {
+  background: transparent;
+  font-weight: 900;
+}
+
 .aggregation__list {
   display: table;
   table-layout: fixed;
@@ -579,7 +584,7 @@ form#home-search__form {
   width: 16px;
 }
 
-.aggregation__more-button,button.aggregation__more-button:hover {
+.aggregation__more-button, button.aggregation__more-button:hover {
   border: none;
   background: transparent;
   color: #501315;

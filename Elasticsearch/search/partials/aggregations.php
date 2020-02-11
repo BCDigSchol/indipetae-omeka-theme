@@ -38,7 +38,7 @@ $url_without_facets = get_view()->url('/elasticsearch') . '?q=' . urlencode($que
                         <div class="modal-content">
                             <div class="modal-header aggregation__modal-header">
                                 <h5 class="modal-title"><?= $facet->label ?></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" class="close aggregation__modal-close-button" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>

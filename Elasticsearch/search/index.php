@@ -63,7 +63,7 @@ $facets = $query['facets'] ?? [];
 
 <?= foot() ?>
 
-<?= js_tag('indipetae.bundle', $dir = 'javascripts', $version = '2020020501') ?>
+<?= js_tag('indipetae.bundle', $dir = 'javascripts', $version = '2020021101') ?>
 <script>
     OmekaElasticsearch.addAggregations();
     OmekaElasticsearch.resultSorter();
