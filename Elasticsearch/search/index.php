@@ -9,8 +9,6 @@
 
 $facets = $query['facets'] ?? [];
 
-$is_search = (bool)$_GET['q'];
-
 ?>
 
 <div class="container">
@@ -67,5 +65,6 @@ $is_search = (bool)$_GET['q'];
 
 <?= js_tag('indipetae.bundle', $dir = 'javascripts', $version = '2020020501') ?>
 <script>
+    OmekaElasticsearch.addAggregations();
     OmekaElasticsearch.resultSorter();
 </script>

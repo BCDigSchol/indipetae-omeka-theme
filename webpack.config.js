@@ -2,10 +2,10 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        app: './src/js/index.js',
+        indipetae: './src/js/index.js'
     },
     output: {
-        filename: 'indipetae.bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'javascripts'),
         libraryTarget: 'var',
         libraryExport: "default",

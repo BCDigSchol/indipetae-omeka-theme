@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
 <?php endif; ?>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js" type="text/javascript"></script>
+
 <script src="<?= ThemeHelpers::JS_PATH ?>/jquery-accessibleMegaMenu.js?v=2.6.1" type="text/javascript"></script>
 <script src="<?= ThemeHelpers::JS_PATH ?>/minimalist.js?v=2.6.1" type="text/javascript"></script>
 

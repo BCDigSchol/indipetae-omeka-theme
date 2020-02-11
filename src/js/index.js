@@ -1,5 +1,6 @@
 import {advancedSearch} from './advancedSearch';
 import {resultSorter} from './resultSorter';
+import {addAggregations} from './termAggregation';
 
 (function () {
     if ( typeof NodeList.prototype.forEach === "function" ) return false;
@@ -23,5 +24,6 @@ if (!Element.prototype.matches) {
 
 export default {
     resultSorter,
-    advancedSearch
+    advancedSearch,
+    addAggregations
 }
