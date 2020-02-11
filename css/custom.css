@@ -683,14 +683,13 @@ form#home-search__form {
   }
 }
 
-/* 06/06/2019 EDITS */
-
 body {
   min-width: 370px;
 }
 
-.desktop-nav {
-  display: inline-block;
+/* Hide nav on load to prevent flash of unstyled content */
+ul.navigation {
+  display: none;
 }
 
 .mobile-nav-hardcode {
