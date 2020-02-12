@@ -23,6 +23,7 @@
         <div class="dropdown-menu adv-select__opts">
             <ul>
                 <li class="adv-select__opt adv-select__opt--from" data-field="from">From (City)</li>
+                <li class="adv-select__opt adv-select__opt--from-institution" data-field="from_institution">From (Institution)</li>
                 <li class="adv-select__opt adv-select__opt--to" data-field="to">To</li>
                 <li class="adv-select__opt adv-select__opt--destinations" data-field="destinations">Destination(s)</li>
             </ul>

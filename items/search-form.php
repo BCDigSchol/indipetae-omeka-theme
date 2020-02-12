@@ -44,6 +44,8 @@ $date_range = ThemeHelpers::getMinMaxYears();
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_FROM) ?>
 
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_FROM_INSTITUTION) ?>
+
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_TO) ?>
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_DESTINATIONS) ?>
