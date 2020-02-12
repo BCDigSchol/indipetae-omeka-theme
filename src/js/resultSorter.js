@@ -16,14 +16,7 @@ function loadSortUrl(event) {
  */
 function resultSorter() {
     document.addEventListener("DOMContentLoaded", () => {
-
-            /**
-             * Sorter select box
-             *
-             * @type {HTMLElement}
-             */
             const sorter = document.getElementById('indipetae-sort-select');
-
             sorter.addEventListener('change', loadSortUrl);
         }
     );

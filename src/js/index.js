@@ -2,11 +2,12 @@ import {advancedSearch} from './advancedSearch';
 import {resultSorter} from './resultSorter';
 import {addAggregations} from './termAggregation';
 
-(function () {
-    if ( typeof NodeList.prototype.forEach === "function" ) return false;
+// Polyfill for forEach
+if (typeof NodeList.prototype.forEach !== "function") {
     NodeList.prototype.forEach = Array.prototype.forEach;
-})();
+}
 
+// Polyfill for Element.matches()
 if (!Element.prototype.matches) {
     Element.prototype.matches =
         Element.prototype.matchesSelector ||
@@ -14,10 +15,11 @@ if (!Element.prototype.matches) {
         Element.prototype.msMatchesSelector ||
         Element.prototype.oMatchesSelector ||
         Element.prototype.webkitMatchesSelector ||
-        function(s) {
-            var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-                i = matches.length;
-            while (--i >= 0 && matches.item(i) !== this) {}
+        function (s) {
+            const matches = (this.document || this.ownerDocument).querySelectorAll(s);
+            let i = matches.length;
+            while (--i >= 0 && matches.item(i) !== this) {
+            }
             return i > -1;
         };
 }
