@@ -78,7 +78,7 @@ class InputParser
     private static function split(string $full_string): array
     {
         // Look for a string that starts each record, and split the markdown on it.
-        $delimiter = 'Transcribed by';
+        $delimiter = '**Sender of the letter**';
         $letters = explode($delimiter, $full_string);
 
         // The first entry is always empty

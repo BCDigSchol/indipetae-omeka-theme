@@ -157,8 +157,8 @@ class Letter
     public function getMonth()
     {
         // Extract month from full date.
-        preg_match('/\d\d\d\d\/(\d?\d)/', $this->getDateSubmitted(), $matches);
-        if (!$matches[1]) {
+        preg_match('/\d\d\d\d\/\d?\d\/(\d?\d)/', $this->getDateSubmitted(), $matches);
+        if (!isset($matches[1]) || !$matches[1]) {
             return '';
         }
         $month_num = (int)$matches[1];
@@ -173,8 +173,8 @@ class Letter
     public function getDay()
     {
         // Extract day from full date.
-        preg_match('/\d\d\d\d\/\d\d\/(\d?\d)/', $this->getDateSubmitted(), $matches);
-        return $matches[1] ?? '';
+        preg_match('/\d\d\d\d\/(\d?\d)\/\d?\d/', $this->getDateSubmitted(), $matches);
+        return isset($matches[1]) ? $matches[1] ?? '' : '';
     }
 
     public function getFrom()
