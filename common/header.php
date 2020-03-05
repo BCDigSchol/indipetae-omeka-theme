@@ -49,7 +49,7 @@ use BCLib\Indipetae\ThemeHelpers;
                         </div>
                         <div class="pull-right col-sm-10">
                             <h1 class="upper header-title">Digital Indipetae Database</h1>
-                            <h4 class="upper header-sub-title">Petitions for the Jesuit Missions (16th-20th centuries)</h4>
+                            <h4 class="upper header-sub-title">Jesuit Petitions for Mission</h4>
                         </div>
                     </div>
                 </div>

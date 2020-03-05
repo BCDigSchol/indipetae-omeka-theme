@@ -24,7 +24,7 @@ const FIELD_DATE = 'date';
 const FIELD_DATE_RANGE = 'date_range';
 const FIELD_SENDER = 'sender';
 const FIELD_FROM = 'from';
-const FIELD_CONTRIBUTOR = 'contributor';
+const FIELD_CONTRIBUTOR = 'transcribed_by';
 const FIELD_ANTERIOR_DESIRE = 'anterior_desire';
 const FIELD_NOTES = 'notes';
 const FIELD_TO = 'to';
@@ -254,7 +254,7 @@ const METADATA_FIELDS = [
     ],
     FIELD_CONTRIBUTOR => [
         'id' => '37',
-        'label' => 'Contributor',
+        'label' => 'Transcriber',
         'dc_label' => 'Contributor',
         'search_field' => true,
         'controlled' => true,

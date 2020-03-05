@@ -1,3 +1,7 @@
+import {createElement} from './createElement';
+import {AdvancedSearchField} from './AdvancedSearchField';
+import {AdvancedSearchFieldList} from "./AdvancedSearchFieldList";
+
 /**
  * Helper functions for advanced search form
  */
@@ -17,7 +21,7 @@ const appliedFields = document.getElementById('applied-fields');
  */
 const resetButton = document.getElementById('indipetae-advanced-search-form__reset-button');
 
-const addedFields = new Set();
+const addedInputList = new AdvancedSearchFieldList();
 
 // Class name constants
 const addedFieldClass = 'advanced-search__added-field';
@@ -75,20 +79,8 @@ function resetForm(event) {
         node.parentNode.removeChild(node);
     });
 
-    // Empty the added fields array.
-    addedFields.clear();
-
     // Set the keyword input blank.
     form.reset();
-}
-
-/**
- * Generate a random 11 character string
- *
- * @return {string}
- */
-function randomString() {
-    return Math.random().toString(32).slice(2);
 }
 
 /**
@@ -102,50 +94,49 @@ function addField(event) {
     event.preventDefault();
 
     // The field to be searched.
-    const field = event.target.dataset.field;
+    const fieldName = event.target.dataset.field;
 
     // No need to continue if the field has already been added to the page.
-    if (addedFields.has(field)) {
+    if (addedInputList.contains(fieldName)) {
         return;
     }
 
-    // Clone the template HTML to create a new field.
-    const template = document.querySelector(`#adv-search__${field}_template`);
-    const clone = template.content ? template.content.cloneNode(true) : createElement(template.innerHTML);
-    if (template.content) {
-        addedFields.add(field);
-    }
+    // Create a div to hold the new field inputs.
+    const fieldHolder = document.createElement('div');
+    fieldHolder.classList.add(`advanced-search__${fieldName}_holder`);
+    appliedFields.appendChild(fieldHolder);
 
-    // Generate random 'id' attribute for the new input and a matching label 'for' attribute. Required since
-    // we might have more than one search box for each field.
-    const input = clone.querySelector(`input[id], select[id]`);
-    const label = clone.querySelector('label');
-    const row = clone.querySelector('.advanced-search-field ');
-    input.id = input.id + '-' + randomString();
-    row.classList.add(addedFieldClass);
-    label.setAttribute('for', input.id);
+    // Create the new field input
+    const fieldElement = new AdvancedSearchField(fieldName, false, deleteInput)
+    addedInputList.add(fieldElement);
 
-    // If there are multiple instances of a field (i.e. two destinations) they are bound with a
-    // logical OR. Indicate this to the user.
-    if (hasSubfields(field)) {
-        clone.querySelector('label').innerHTML = '<span class="advanced-search-field__or-label">or</span>';
-        insertAfter(lastRowOfType(field), clone);
-    } else {
-        appliedFields.appendChild(clone);
-    }
-
-    // Add a "plus" button to add a new field. If there is already a "plus" button, remove it
-    // and add a new one.
-    const oldButton = document.getElementById(`add-${field}-button`);
-    if (oldButton) {
-        oldButton.parentNode.removeChild(oldButton);
-    }
-    const addButton = createAddRowButton(field);
-    insertAfter(row, addButton);
-    document.getElementById(`add-${field}-button`).addEventListener('click', addField);
+    // Add the new add item input button.
+    const addButton = createAddRowButton(fieldName);
+    fieldHolder.parentNode.insertBefore(addButton, fieldHolder.nextSibling);
+    //document.getElementById(`add-${fieldName}-button`).addEventListener('click', addField);
 
     // If this field requires a date range selector, activate it.
-    addDateRangeSelector($(`.adv-search-field--date_range #${input.id}`));
+    addDateRangeSelector($(`.adv-search-field--date_range #${fieldElement.getInputId()}`));
+}
+
+/**
+ * Called when a input is deleted
+ *
+ * @param deletedInput {AdvancedSearchField}
+ */
+function deleteInput(deletedInput) {
+    addedInputList.remove(deletedInput);
+
+    if (! addedInputList.contains(deletedInput)) {
+        const addButton = document.getElementById(`add-${deletedInput.fieldName}-button`);
+        addButton.parentNode.removeChild(addButton);
+        const fieldHolder = document.querySelector(`.advanced-search__${deletedInput.fieldName}_holder`);
+        fieldHolder.parentNode.removeChild(fieldHolder);
+    }
+
+    if (addedInputList.isFirstOfField(deletedInput)) {
+        deletedInput.showLabel();
+    }
 }
 
 /**
@@ -156,58 +147,6 @@ function addField(event) {
  */
 function insertAfter(oldElement, newElement) {
     oldElement.parentNode.insertBefore(newElement, oldElement.nextSibling);
-}
-
-/**
- * Create an element from a string
- *
- * @param str
- * @return {DocumentFragment}
- */
-function createElement(str) {
-    const frag = document.createDocumentFragment();
-    const elem = document.createElement('div');
-    elem.innerHTML = str;
-    while (elem.childNodes[0]) {
-        frag.appendChild(elem.childNodes[0]);
-    }
-    return frag;
-}
-
-function handleDeleteClick(event) {
-    if (event.target.matches('.advanced-search-field__delete-button')) {
-        event.preventDefault();
-        deleteSearchField(event.target);
-    }
-}
-
-function deleteSearchField(element) {
-    if (element.matches('.advanced-search-field__delete-button')) {
-
-        // The data field we're dealing with.
-        const field = element.dataset.field;
-
-        // Selector to find data rows of this type.
-        const fieldGroupSelector = getFieldGroupSelector(field);
-
-        // Are there multiple fields of this type?
-        const hasMultipleFields = hasMultipleSubFields(field);
-
-        // Original type label (e.g. 'Date range')
-        const typeLabel = document.querySelector(`${fieldGroupSelector} label`).innerHTML;
-
-        // Delete the node.
-        element.parentNode.parentNode.remove();
-
-        // If there were multiple instances of this field type, relabel the first instance. If not, delete
-        // the node and the add button.
-        if (hasMultipleFields) {
-            document.querySelector(`${fieldGroupSelector} label`).innerHTML = typeLabel;
-        } else {
-            addedFields.delete(field);
-            document.getElementById(`add-${field}-button`).remove();
-        }
-    }
 }
 
 /**
@@ -238,7 +177,6 @@ function advancedSearch() {
         // Activate form buttons.
         form.addEventListener('submit', handleSubmit);
         resetButton.addEventListener('click', resetForm);
-        appliedFields.addEventListener('click', handleDeleteClick);
 
         // Activate left menu.
         document.querySelectorAll('.adv-select__opt').forEach((opt) => {

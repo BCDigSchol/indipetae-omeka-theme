@@ -9,7 +9,7 @@
                 <li class="adv-select__opt adv-select__opt--recipient" data-field="recipient">Recipient</li>
                 <li class="adv-select__opt adv-select__opt--model" data-field="jmodel">Models/Saints/Missionaries</li>
                 <li class="adv-select__opt adv-select__opt--other_names" data-field="other_name">Other names</li>
-                <li class="adv-select__opt adv-select__opt--other_names" data-field="contributor">Transcriber</li>
+                <li class="adv-select__opt adv-select__opt--other_names" data-field="transcribed_by">Transcriber</li>
             </ul>
         </div>
     </div>
