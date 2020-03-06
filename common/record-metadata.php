@@ -25,8 +25,8 @@
         \BCLib\Indipetae\FIELD_LANGUAGE,
         \BCLib\Indipetae\FIELD_LINKS,
         \BCLib\Indipetae\FIELD_NOTES,
-        \BCLib\Indipetae\FIELD_CALL_NUMBER,
         \BCLib\Indipetae\FIELD_ARCHIVE,
+        \BCLib\Indipetae\FIELD_COLLECTION,
         \BCLib\Indipetae\FIELD_FOLDER,
         \BCLib\Indipetae\FIELD_NUMBER,
     ];

@@ -64,9 +64,9 @@ $date_range = ThemeHelpers::getMinMaxYears();
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_LANGUAGE) ?>
 
-<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_ARCHIVE) ?>
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_COLLECTION) ?>
 
-<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_CALL_NUMBER) ?>
+<?= ThemeHelpers::advSearchInput(Indipetae\FIELD_ARCHIVE) ?>
 
 <?= ThemeHelpers::advSearchInput(Indipetae\FIELD_FOLDER) ?>
 

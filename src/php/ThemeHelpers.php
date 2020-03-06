@@ -56,12 +56,11 @@ class ThemeHelpers
          */
         $field = $fields->getField($field_name);
 
-        // The "archive" field is a special case, because it is derived from a Collection name instead of an
+        // The "collection" field is a special case, because it is derived from a Collection name instead of an
         // ElementText.
-        if ($field_name === FIELD_ARCHIVE) {
-            $field_name = 'archive';
+        if ($field_name === FIELD_COLLECTION) {
             $input_tag = self::advSearchSelect($field, $field_name);
-            return self::advancedSearchInputTemplate($field_name, 'Archive', $input_tag);
+            return self::advancedSearchInputTemplate($field_name, 'Collection', $input_tag);
         }
 
         if ($field->is_controlled) {
@@ -72,7 +71,7 @@ class ThemeHelpers
             $input_tag = self::advSearchTextInput($field_name); // Plain text input
         }
 
-        $field_label = __($field->dublin_core_label);
+        $field_label = $field->label;
 
         return self::advancedSearchInputTemplate($field_name, $field_label, $input_tag);
     }
@@ -125,7 +124,7 @@ TAG;
     {
 
         // Archives are a special case, since they are derived from a Collection rather than an ElementText.
-        if ($field_name === FIELD_ARCHIVE) {
+        if ($field_name === FIELD_COLLECTION) {
             $values = ['New Society (1814-1939)'];
         } else {
             $field_id = $field->field_id;

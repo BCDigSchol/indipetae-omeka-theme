@@ -4,8 +4,8 @@ namespace BCLib\Indipetae\Import;
 
 use BCLib\Indipetae\MetadataMap;
 use const BCLib\Indipetae\FIELD_ANTERIOR_DESIRE;
+use const BCLib\Indipetae\FIELD_COLLECTION;
 use const BCLib\Indipetae\FIELD_ARCHIVE;
-use const BCLib\Indipetae\FIELD_CALL_NUMBER;
 use const BCLib\Indipetae\FIELD_CONTRIBUTOR;
 use const BCLib\Indipetae\FIELD_DATE;
 use const BCLib\Indipetae\FIELD_DAY;
@@ -66,8 +66,8 @@ class CSVWriter implements BatchWriter
         FIELD_LANGUAGE,
         FIELD_LINKS,
         FIELD_NOTES,
-        FIELD_CALL_NUMBER,
         FIELD_ARCHIVE,
+        FIELD_COLLECTION,
         FIELD_FOLDER,
         FIELD_NUMBER,
         FIELD_CONTRIBUTOR,

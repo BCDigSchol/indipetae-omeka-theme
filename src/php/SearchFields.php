@@ -16,7 +16,7 @@ const FIELD_LINKS = 'links';
 const FIELD_OTHER_NAMES = 'other_name';
 const FIELD_DESTINATIONS = 'destinations';
 const FIELD_LANGUAGE = 'language';
-const FIELD_CALL_NUMBER = 'call_number';
+const FIELD_ARCHIVE = 'archive';
 const FIELD_RECIPIENT = 'recipient';
 const FIELD_TRANSCRIPTION = 'transcription';
 const FIELD_TRANSCRIPTION_BACK = 'transcription_back';
@@ -30,7 +30,7 @@ const FIELD_NOTES = 'notes';
 const FIELD_TO = 'to';
 const FIELD_LEFT_FOR_MISSION = 'left_for_mission';
 const FIELD_DOCUMENT_ID = 'document_id';
-const FIELD_ARCHIVE = 'collection';
+const FIELD_COLLECTION = 'collection';
 const FIELD_FOLDER = 'folder';
 const FIELD_NUMBER = 'number';
 const FIELD_YEAR = 'year';
@@ -229,7 +229,7 @@ const METADATA_FIELDS = [
         'dc_label' => 'Abstract',
         'search_field' => true,
     ],
-    FIELD_CALL_NUMBER => [
+    FIELD_ARCHIVE => [
         'id' => '43',
         'label' => 'Archive',
         'dc_label' => 'Identifier',
@@ -258,14 +258,14 @@ const METADATA_FIELDS = [
         'dc_label' => 'Contributor',
         'search_field' => true,
         'controlled' => true,
-        'load_from_db' => true,
+        'load_from_db' => true
     ],
-    FIELD_ARCHIVE => [
+    FIELD_COLLECTION => [
         'id' => '111111',
-        'label' => 'Archive',
+        'label' => 'Collection',
         'dc_label' => 'Collection',
         'search_field' => true,
         'controlled' => true,
         'values' => ['New Society (1814-1939)']
-    ],
+    ]
 ];
