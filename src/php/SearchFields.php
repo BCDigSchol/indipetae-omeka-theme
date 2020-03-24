@@ -30,7 +30,7 @@ const FIELD_NOTES = 'notes';
 const FIELD_TO = 'to';
 const FIELD_LEFT_FOR_MISSION = 'left_for_mission';
 const FIELD_DOCUMENT_ID = 'document_id';
-const FIELD_COLLECTION = 'collection';
+const FIELD_COLLECTION = 'coll';
 const FIELD_FOLDER = 'folder';
 const FIELD_NUMBER = 'number';
 const FIELD_YEAR = 'year';
@@ -266,6 +266,6 @@ const METADATA_FIELDS = [
         'dc_label' => 'Collection',
         'search_field' => true,
         'controlled' => true,
-        'values' => ['New Society (1814-1939)']
+        'values' => ['New Society (1814-1958)']
     ]
 ];

@@ -11,11 +11,17 @@ use BCLib\Indipetae\ThemeHelpers;
     <div id="footer-container" class="container">
 
         <p class="footer-title">Digital Indipetae Database</p>
-        <p>The Digital Indipetae Database is organized by the Institute for Advanced Jesuit Studies in collaboration with the Archivum Romanum Societatis Iesu. Its editorial and scientific boards coordinate the project and promote it within the international community of scholars.</p>
+        <p>The Digital Indipetae Database is organized by the
+            <a href="https://www.bc.edu/content/bc-web/centers/iajs.html">Institute for Advanced Jesuit Studies</a> in
+            collaboration with the <a href="http://www.sjweb.info/arsi/en/archivum-romanum-societatis-iesu/">Archivum
+                Romanum Societatis Iesu</a>. Its <a href="https://indipetae.bc.edu/board">editorial and scientific
+                boards</a> coordinate the
+            project and promote it within the international community of scholars.
+        </p>
 
         <div class="row">
             <div class="col-md-3 col-sm-12">
-                <img src="<?= ThemeHelpers::IMG_PATH ?>/Logo_300.png" class="footer-logo" alt="Boston College Libraries">
+                <a href="https://library.bc.edu/"><img src="<?= ThemeHelpers::IMG_PATH ?>/Logo_300.png" class="footer-logo" alt="Boston College Libraries"></a>
             </div>
 
             <div class="col-md-9 col-sm-12">

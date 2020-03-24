@@ -50,8 +50,6 @@ class AdvancedSearchField {
         this.node.querySelector('.advanced-search-field__label').classList.remove('sr-only');
     }
 
-
-
     /**
      * Get the ID of the input element
      *

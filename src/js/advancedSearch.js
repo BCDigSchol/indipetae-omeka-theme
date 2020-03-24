@@ -55,7 +55,6 @@ function handleSubmit(event) {
 
     const queryArray = [];
     allInputs.forEach(function (parsedInput) {
-        console.log(parsedInput);
         if (parsedInput.value) {
             queryArray.push(`${parsedInput.name}="${parsedInput.value}"`);
         }
@@ -94,6 +93,41 @@ function resetForm(event) {
 }
 
 /**
+ * Create an advanced search field
+ *
+ * @param fieldName
+ * @return AdvancedSearchField
+ */
+function createField(fieldName) {
+    // Create a div to hold the new field inputs.
+    const fieldHolder = document.createElement('div');
+    fieldHolder.classList.add(`advanced-search__${fieldName}_holder`);
+    appliedFields.appendChild(fieldHolder);
+
+    // Create the new field input
+    const fieldElement = new AdvancedSearchField(fieldName, false, deleteInput);
+    addedInputList.add(fieldElement);
+
+    const addButton = createAddRowButton(fieldName);
+    fieldHolder.parentNode.insertBefore(addButton, fieldHolder.nextSibling);
+    document.getElementById(`add-${fieldName}-button`).addEventListener('click', addField);
+
+    return fieldElement;
+}
+
+/**
+ * Add another input to an existing field
+ *
+ * @param fieldName
+ * @return AdvancedSearchField
+ */
+function addInput(fieldName) {
+    const fieldElement = new AdvancedSearchField(fieldName, true, deleteInput);
+    addedInputList.add(fieldElement);
+    return fieldElement;
+}
+
+/**
  * Add an Advanced Search field
  *
  * @param event
@@ -106,27 +140,12 @@ function addField(event) {
     // The field to be searched.
     const fieldName = event.target.dataset.field;
 
-    // No need to continue if the field has already been added to the page.
-    if (addedInputList.contains(fieldName)) {
-        return;
-    }
+    // If a field of this type has already been created, append a new input. Otherwise, create the
+    // entire field.
+    const fieldElement = addedInputList.contains(fieldName) ? addInput(fieldName) : createField(fieldName);
 
-    // Create a div to hold the new field inputs.
-    const fieldHolder = document.createElement('div');
-    fieldHolder.classList.add(`advanced-search__${fieldName}_holder`);
-    appliedFields.appendChild(fieldHolder);
-
-    // Create the new field input
-    const fieldElement = new AdvancedSearchField(fieldName, false, deleteInput)
-    addedInputList.add(fieldElement);
-
-    // Add the new add item input button.
-    const addButton = createAddRowButton(fieldName);
-    fieldHolder.parentNode.insertBefore(addButton, fieldHolder.nextSibling);
-    //document.getElementById(`add-${fieldName}-button`).addEventListener('click', addField);
-
-    // If this field requires a date range selector, activate it.
-    addDateRangeSelector($(`.adv-search-field--date_range #${fieldElement.getInputId()}`));
+    // If this is a date range selector, activate it.
+    addDateRangeSelector($(`#date_range-${fieldElement.getInputId()}`));
 }
 
 /**
@@ -137,12 +156,15 @@ function addField(event) {
 function deleteInput(deletedInput) {
     addedInputList.remove(deletedInput);
 
+    /**
     if (! addedInputList.contains(deletedInput)) {
         const addButton = document.getElementById(`add-${deletedInput.fieldName}-button`);
         addButton.parentNode.removeChild(addButton);
         const fieldHolder = document.querySelector(`.advanced-search__${deletedInput.fieldName}_holder`);
         fieldHolder.parentNode.removeChild(fieldHolder);
-    }
+    }**/
+
+    deletedInput.handleDelete();
 
     if (addedInputList.isFirstOfField(deletedInput)) {
         deletedInput.showLabel();

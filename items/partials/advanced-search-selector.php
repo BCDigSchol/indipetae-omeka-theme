@@ -70,7 +70,7 @@
         </button>
         <div class="dropdown-menu adv-select__opts">
             <ul>
-                <li class="adv-select__opt adv-select__opt--grade" data-field="collection">Collection</li>
+                <li class="adv-select__opt adv-select__opt--grade" data-field="coll">Collection</li>
                 <li class="adv-select__opt adv-select__opt--grade" data-field="archive">Archive</li>
                 <li class="adv-select__opt adv-select__opt--anterior_desire" data-field="folder">Folder</li>
                 <li class="adv-select__opt adv-select__opt--left_for_mission" data-field="number">Number</li>

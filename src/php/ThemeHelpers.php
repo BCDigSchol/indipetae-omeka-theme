@@ -125,7 +125,7 @@ TAG;
 
         // Archives are a special case, since they are derived from a Collection rather than an ElementText.
         if ($field_name === FIELD_COLLECTION) {
-            $values = ['New Society (1814-1939)'];
+            $values = ['New Society (1814-1958)'];
         } else {
             $field_id = $field->field_id;
             $values = $field->is_loadable ? self::getElementTextsFromDB($field_id) : $field->values;
@@ -249,6 +249,8 @@ SELECT MIN(omeka_element_texts.text) as min_year,
        MAX(omeka_element_texts.text) as max_year
 FROM omeka_element_texts
 WHERE omeka_element_texts.element_id = 40
+AND omeka_element_texts.text NOT LIKE '%[%'
+AND omeka_element_texts.text LIKE '1%'
 AND omeka_element_texts.text <> '';
 SQL;
         $result = $db->getTable('ElementText')->fetchAll($select_sql);

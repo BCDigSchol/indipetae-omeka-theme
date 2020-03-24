@@ -29,7 +29,7 @@ class AdvancedSearchFieldList {
      */
     remove(fieldToRemove) {
         this.fields[fieldToRemove.fieldName] = this.fields[fieldToRemove.fieldName].filter((field) => {
-            return field === fieldToRemove;
+            return field !== fieldToRemove;
         });
 
         if (this.fields[fieldToRemove.fieldName]) {
