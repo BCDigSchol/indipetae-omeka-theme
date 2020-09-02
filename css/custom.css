@@ -125,6 +125,7 @@ h1 {
   margin: 0;
   display: block;
   font-weight: bold;
+  word-break: break-all;
 }
 
 .advanced-search-field__input[type="text"] {
@@ -502,7 +503,7 @@ form#home-search__form {
   display: inline-block;
 }
 
-.home-search__adv_search_link a:visited {
+.home-search__adv_search_link a:visited, .home-search__adv_search_link a {
   color: #fff;
 }
 
