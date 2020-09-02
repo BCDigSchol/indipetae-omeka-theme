@@ -125,7 +125,7 @@ TAG;
 
         // Archives are a special case, since they are derived from a Collection rather than an ElementText.
         if ($field_name === FIELD_COLLECTION) {
-            $values = ['New Society (1814-1958)'];
+            $values = ['Old Society (1540-1773)','New Society (1814-1958)'];
         } else {
             $field_id = $field->field_id;
             $values = $field->is_loadable ? self::getElementTextsFromDB($field_id) : $field->values;

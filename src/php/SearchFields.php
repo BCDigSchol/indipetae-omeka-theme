@@ -266,6 +266,6 @@ const METADATA_FIELDS = [
         'dc_label' => 'Collection',
         'search_field' => true,
         'controlled' => true,
-        'values' => ['New Society (1814-1958)']
+        'values' => ['New Society (1814-1958)', 'Old Society (1540-1773)']
     ]
 ];
