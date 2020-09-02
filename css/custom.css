@@ -48,9 +48,8 @@ h4.upper.header-sub-title {
 }
 
 h1 {
-  text-transform: capitalize;
+  text-transform: none;
 }
-
 
 /*Advanced Search*/
 .search-groups {
